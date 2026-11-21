@@ -35,6 +35,14 @@ def api(method, url, params=None, headers=None, data=None):
         raise RuntimeError(f"{method} {url.split('?')[0]} -> {e.code}: {e.read()[:500]!r}")
 
 
+def upload_binary(uri, video, tok):
+    """POST the raw file to the rupload uri. urllib defaults to form-urlencoded, which rupload rejects."""
+    size = video.stat().st_size
+    return api("POST", uri, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(size),
+                                     "Content-Type": "application/octet-stream",
+                                     "Content-Length": str(size)}, data=video.read_bytes())
+
+
 def next_item(slot=None):
     items = []
     for meta in sorted((ROOT / "queue").glob("*/meta.json")):
@@ -52,7 +60,7 @@ def publish(video, caption, uid, tok):
     cid = c["id"]
     uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{VER}/{cid}"
     size = video.stat().st_size
-    api("POST", uri, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(size)}, data=video.read_bytes())
+    upload_binary(uri, video, tok)
     for _ in range(60):
         st = api("GET", f"{base}/{cid}", {"fields": "status_code,status", "access_token": tok})
         if st.get("status_code") == "FINISHED":

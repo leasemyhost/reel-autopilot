@@ -2,14 +2,14 @@
 import os, sys, time
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from post_instagram import HOST, VER, api
+from post_instagram import HOST, VER, api, upload_binary
 tok, uid = os.environ["IG_ACCESS_TOKEN"], os.environ["IG_USER_ID"]
 video = Path(sys.argv[1])
 base = f"https://{HOST}/{VER}"
 c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": "upload test (not published)", "access_token": tok})
 print("container:", c.get("id"), "uri:", "yes" if c.get("uri") else "no")
 uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{VER}/{c['id']}"
-r = api("POST", uri, headers={"Authorization": f"OAuth {tok}", "offset": "0", "file_size": str(video.stat().st_size)}, data=video.read_bytes())
+r = upload_binary(uri, video, tok)
 print("upload:", r)
 for _ in range(40):
     st = api("GET", f"{base}/{c['id']}", {"fields": "status_code,status", "access_token": tok})
