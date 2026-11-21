@@ -1,0 +1,266 @@
+{
+ "id": "2026-11-22-morning",
+ "topic": "5 FREE AI tools with verified free limits (Gemini, Perplexity, Claude, Bing Image Creator, TTSMaker)",
+ "title": "5 free AI tools",
+ "hook": "Har mahine AI ke paise mat do",
+ "handle": "Jayant Ke Guides",
+ "slot": "morning",
+ "lines": [
+  {
+   "hi": "हर महीने एआई के पैसे देना बंद करो। ये पाँच टूल्स फ़्री हैं।",
+   "cap": "Har mahine [AI] ke paise mat do. Ye [5] tools [Free] hain"
+  },
+  {
+   "hi": "और हर एक की असली फ़्री लिमिट भी सुनो।",
+   "cap": "Har ek ki asli [Free] [Limit] bhi suno"
+  },
+  {
+   "hi": "नंबर वन, जेमिनी। नैनो बनाना से फ़्री में इमेज बनाओ।",
+   "cap": "No. 1 [Gemini] - [Nano] [Banana] se free image"
+  },
+  {
+   "hi": "डीप रिसर्च भी फ़्री प्लान में मिलता है।",
+   "cap": "[Deep] [Research] bhi free plan mein"
+  },
+  {
+   "hi": "लिमिट हर पाँच घंटे में रीसेट होती है।",
+   "cap": "Limit har [5] [Ghante] mein reset"
+  },
+  {
+   "hi": "नंबर टू, परप्लेक्सिटी। बेसिक सर्च लगभग अनलिमिटेड।",
+   "cap": "No. 2 [Perplexity] - basic search almost [Unlimited]"
+  },
+  {
+   "hi": "और रोज़ तीन प्रो सर्च बिल्कुल फ़्री।",
+   "cap": "Roz [3] [Pro] searches bilkul free"
+  },
+  {
+   "hi": "नंबर थ्री, क्लॉड। फ़्री प्लान में सॉनेट मॉडल।",
+   "cap": "No. 3 [Claude] - free plan mein [Sonnet]"
+  },
+  {
+   "hi": "फ़ाइल बनाओ, कोड चलाओ, वेब सर्च करो।",
+   "cap": "File banao, [Code] chalao, [Web] search karo"
+  },
+  {
+   "hi": "नंबर फ़ोर, बिंग इमेज क्रिएटर। बस माइक्रोसॉफ़्ट अकाउंट चाहिए।",
+   "cap": "No. 4 [Bing] Image Creator - bas [Microsoft] account"
+  },
+  {
+   "hi": "रोज़ पंद्रह फ़ास्ट इमेज, फ़्री में।",
+   "cap": "Roz [15] [Fast] images free mein"
+  },
+  {
+   "hi": "नंबर फ़ाइव, टीटीएस मेकर। टेक्स्ट से आवाज़ बनाओ।",
+   "cap": "No. 5 [TTSMaker] - text se [Awaaz] banao"
+  },
+  {
+   "hi": "हर हफ़्ते बीस हज़ार कैरेक्टर फ़्री, कमर्शियल यूज़ भी।",
+   "cap": "Har hafte [20,000] characters free, [Commercial] use bhi"
+  },
+  {
+   "hi": "लिमिट बदलती रहती है, इसलिए ये लिस्ट अभी सेव करो।",
+   "cap": "Limit badalti rehti hai, list abhi [Save] karo"
+  },
+  {
+   "hi": "और फ़ॉलो करो। रोज़ नए फ़्री टूल्स, बिना पैसे दिए।",
+   "cap": "[Follow] karo - roz naye [Free] tools, bina [Paise] diye"
+  }
+ ],
+ "sections": [
+  {
+   "lines": [
+    0,
+    1
+   ],
+   "card": "hero",
+   "params": {
+    "window": "free-ai-kit · 2026",
+    "title": "5 FREE AI Tools",
+    "subtitle": "Limit ke saath, sach",
+    "badge": "₹0 / MONTH",
+    "stat_label": "Aapka AI bill",
+    "stat_from": 0,
+    "stat_to": 0,
+    "stat_style": "inr",
+    "stat_at": "l1",
+    "stat_chip": "Free plan",
+    "checklist_title": "Aaj ki list",
+    "items": [
+     "01  Gemini · Perplexity",
+     "02  Claude · Bing",
+     "03  TTSMaker"
+    ],
+    "check_at": "l1+0.3",
+    "phone": {
+     "title": "FREE",
+     "subtitle": "AI TOOLS",
+     "cta": "Save this list",
+     "line": "5 tools · ₹0"
+    }
+   }
+  },
+  {
+   "lines": [
+    2,
+    4
+   ],
+   "card": "terminal",
+   "params": {
+    "label": "#1 · Gemini",
+    "window": "gemini.google.com",
+    "prompts": [
+     {
+      "text": "> Diwali sale ka poster banao",
+      "at": "l0+0.6"
+     },
+     {
+      "text": "> Deep Research: best phone",
+      "at": "l1"
+     }
+    ],
+    "results": [
+     {
+      "text": "Image ready · Nano Banana 2",
+      "at": "l1+0.4"
+     },
+     {
+      "text": "Research report ready",
+      "at": "l2"
+     },
+     {
+      "text": "Limit reset: 5 ghante",
+      "at": "l2+0.5"
+     }
+    ],
+    "cards": [
+     {
+      "title": "Gemini free plan",
+      "sub": "Image + Deep Research"
+     },
+     {
+      "chip": "₹0 / MO",
+      "title": "Google account",
+      "sub": "Bas login karo",
+      "green": true
+     }
+    ]
+   }
+  },
+  {
+   "lines": [
+    5,
+    6
+   ],
+   "card": "big_number",
+   "params": {
+    "label": "#2 Perplexity · Pro search",
+    "from": 0,
+    "to": 3,
+    "style": "plain",
+    "sub": "Har din free + basic search",
+    "chips": [
+     "Free plan",
+     "3 Pro / day",
+     "Basic ~unlimited"
+    ]
+   }
+  },
+  {
+   "lines": [
+    7,
+    8
+   ],
+   "card": "chat",
+   "params": {
+    "label": "#3 · Claude",
+    "contact": "Claude · Free",
+    "phone": {
+     "title": "CLAUDE",
+     "subtitle": "FREE PLAN",
+     "cta": "Try free",
+     "line": "Sonnet · ₹0"
+    },
+    "messages": [
+     {
+      "text": "Mera resume PDF bana do",
+      "mine": true,
+      "at": "l0+0.8"
+     },
+     {
+      "text": "Ready! File download karo",
+      "at": "l1"
+     },
+     {
+      "text": "Ab web pe check karo",
+      "mine": true,
+      "at": "l1+0.9"
+     }
+    ],
+    "stamp": "₹0 ✓"
+   }
+  },
+  {
+   "lines": [
+    9,
+    10
+   ],
+   "card": "stats",
+   "params": {
+    "window": "bing.com/images/create",
+    "label": "Fast images / din",
+    "start_value": 0,
+    "end_value": 15,
+    "style": "plain",
+    "grow_at": "l1",
+    "bars": 15,
+    "bar_label_fmt": "{n} images",
+    "footer": "Microsoft account se free",
+    "chip": "Roz refill",
+    "chip_at": "l1+0.6"
+   }
+  },
+  {
+   "lines": [
+    11,
+    12
+   ],
+   "card": "steps",
+   "params": {
+    "window": "ttsmaker.com",
+    "items": [
+     {
+      "title": "Text paste karo",
+      "sub": "Ek baar mein 3,000 chars",
+      "at": 0.5
+     },
+     {
+      "title": "Voice chuno",
+      "sub": "300+ AI voices",
+      "at": "l0+1.6"
+     },
+     {
+      "title": "20,000 chars / hafta",
+      "sub": "Free · commercial use OK",
+      "at": "l1+0.2"
+     }
+    ]
+   }
+  },
+  {
+   "lines": [
+    13,
+    14
+   ],
+   "card": "cta",
+   "params": {
+    "keyword": "SAVE",
+    "name": "Jayant Ke Guides",
+    "initials": "JK",
+    "dm_text": "List save karo, kaam aayegi",
+    "dm_sub": "Follow karo - roz naye free AI tools"
+   }
+  }
+ ],
+ "caption": "Free AI tools 2026: Gemini, Perplexity, Claude, Bing Image Creator aur TTSMaker. Paid plan se pehle ye try karo.\n\nHar tool ki asli free limit (official pages se):\n1. Gemini: free image (Nano Banana 2) + Deep Research, limit har 5 ghante reset\n2. Perplexity: basic search lagbhag unlimited, 3 Pro search roz\n3. Claude: free plan mein Sonnet, file banao, code chalao, web search\n4. Bing Image Creator: roz 15 fast images, Microsoft account se\n5. TTSMaker: 20,000 characters har hafte free, commercial use allowed\n\nLimits company kabhi bhi badal sakti hai, use karne se pehle check kar lena.\n\nSave this list taaki kho na jaye. Roz naye free AI tools isi page pe aate hain, follow karte raho.\n\n#aitools #aitoolsforfree #chatgpthindi #gemini #perplexity"
+}
