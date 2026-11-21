@@ -1,0 +1,381 @@
+{
+ "id": "example-ai-website",
+ "topic": "AI se website banakar local business se kamai",
+ "title": "AI website business",
+ "hook": "Stop coding seekhna",
+ "handle": "Jayant Ke Guides",
+ "slot": "test",
+ "lines": [
+  {
+   "hi": "स्टॉप कोडिंग सीखना! पंद्रह मिनट काफ़ी हैं।",
+   "cap": "Stop [Coding] [Seekhna] — 15 minute kaafi hain"
+  },
+  {
+   "hi": "दस हज़ार रुपये की वेबसाइट, AI से।",
+   "cap": "[₹10,000] ki website, [AI] se"
+  },
+  {
+   "hi": "और ये सपना नहीं, सीधा हिसाब है।",
+   "cap": "Ye sapna nahi, [Seedha] [Hisaab] hai"
+  },
+  {
+   "hi": "अपनी गली की दस दुकानें गिनो।",
+   "cap": "Apni gali ki [10] [Dukaanein] gino"
+  },
+  {
+   "hi": "उनमें से कितनों की वेबसाइट है? शायद दो।",
+   "cap": "Kitno ki website hai? [Shayad] [2]"
+  },
+  {
+   "hi": "डॉक्टर, कोचिंग, सैलून, सबको गूगल पे दिखना है।",
+   "cap": "[Doctor] [Coaching] [Salon] sabko Google pe dikhna hai"
+  },
+  {
+   "hi": "स्टेप वन। क्लॉड या चैटजीपीटी खोलो।",
+   "cap": "[Step] [1:] Claude ya ChatGPT kholo"
+  },
+  {
+   "hi": "प्रॉम्प्ट दो: मेरी बेकरी की मोबाइल वेबसाइट बनाओ।",
+   "cap": "Prompt do: meri [Bakery] ki [Website] banao"
+  },
+  {
+   "hi": "व्हाट्सऐप बटन के साथ।",
+   "cap": "[WhatsApp] button ke saath"
+  },
+  {
+   "hi": "स्टेप टू। कोड को नेटलिफ़ाई पे ड्रैग एंड ड्रॉप करो।",
+   "cap": "[Step] [2:] Code ko [Netlify] pe drag & drop"
+  },
+  {
+   "hi": "दो मिनट में वेबसाइट लाइव, फ़्री होस्टिंग पे।",
+   "cap": "2 minute mein [Live] aur [Free] hosting"
+  },
+  {
+   "hi": "स्टेप थ्री। अपने एरिया की दस दुकानों में जाओ।",
+   "cap": "[Step] [3:] Area ki 10 dukaanon mein jao"
+  },
+  {
+   "hi": "उनकी वेबसाइट पहले से बना के दिखाओ।",
+   "cap": "Website [Pehle] [Se] bana ke dikhao"
+  },
+  {
+   "hi": "डेमो देख के लोग जल्दी हाँ बोलते हैं।",
+   "cap": "Demo dekh ke log [Jaldi] [Haan] bolte hain"
+  },
+  {
+   "hi": "एक वेबसाइट की फ़ीस दस हज़ार रुपये रखो।",
+   "cap": "Ek website ki fees [₹10,000]"
+  },
+  {
+   "hi": "महीने में सिर्फ़ दस क्लाइंट, मतलब एक लाख रुपये।",
+   "cap": "10 client matlab [₹1] [Lakh] mahina"
+  },
+  {
+   "hi": "हर महीने मेंटेनेंस के हज़ार रुपये अलग से।",
+   "cap": "Har mahine [Maintenance] ke ₹1,000 alag"
+  },
+  {
+   "hi": "ना ऑफ़िस चाहिए, ना डिग्री, ना कोडिंग।",
+   "cap": "Na office, na degree, na [Coding]"
+  },
+  {
+   "hi": "बस एक लैपटॉप, और पहला क्लाइंट ढूँढने की हिम्मत।",
+   "cap": "Bas ek [Laptop] aur pehla client dhoondhne ki [Himmat]"
+  },
+  {
+   "hi": "प्रॉम्प्ट चाहिए? कमेंट में वेबसाइट लिखो।",
+   "cap": "Prompt chahiye? Comment karo [Website]"
+  },
+  {
+   "hi": "और याद रखो, कोडिंग नहीं, वेबसाइट बेचना सीखो।",
+   "cap": "Coding nahi, [Website] [Bechna] seekho"
+  }
+ ],
+ "sections": [
+  {
+   "lines": [
+    0,
+    2
+   ],
+   "card": "hero",
+   "params": {
+    "window": "claude-code — website-kit",
+    "title": "AI Website Kit",
+    "subtitle": "Local business edition",
+    "badge": "3 STEPS · ₹0",
+    "stat_label": "Client fees",
+    "stat_from": 0,
+    "stat_to": 10000,
+    "stat_style": "inr",
+    "stat_at": "l1",
+    "stat_chip": "+1 client",
+    "checklist_title": "Zero → First client",
+    "items": [
+     "01  AI se website banao",
+     "02  Free mein live karo",
+     "03  Dukaan ko demo do"
+    ],
+    "check_at": "l2+0.25",
+    "phone": {
+     "title": "SHARMA",
+     "subtitle": "BAKERY",
+     "cta": "Order on WhatsApp",
+     "line": "Fresh cakes daily"
+    }
+   }
+  },
+  {
+   "lines": [
+    3,
+    5
+   ],
+   "card": "list_scan",
+   "params": {
+    "window": "local-market — scan",
+    "heading": "Aapki gali · 10 dukaanein",
+    "counter_fmt": "{n}/10 online",
+    "items": [
+     {
+      "name": "Sharma Bakery",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": "l1+0.9"
+     },
+     {
+      "name": "Gupta Medical",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": null
+     },
+     {
+      "name": "Raj Salon",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": null
+     },
+     {
+      "name": "City Coaching",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": null
+     },
+     {
+      "name": "Dr. Verma Clinic",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": null
+     },
+     {
+      "name": "Kumar Kirana",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": "l1+1.15"
+     },
+     {
+      "name": "Style Boutique",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": null
+     },
+     {
+      "name": "Fit Gym",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": null
+     },
+     {
+      "name": "Agarwal Sweets",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": null
+     },
+     {
+      "name": "Mobile Point",
+      "from": "No site",
+      "to": "Online",
+      "flip_at": null
+     }
+    ],
+    "search": {
+     "text": "doctor near me",
+     "at": "l2",
+     "tag": "Yahan dikhna hai!"
+    }
+   }
+  },
+  {
+   "lines": [
+    6,
+    8
+   ],
+   "card": "terminal",
+   "params": {
+    "label": "Step 1 · Prompt do",
+    "window": "claude.ai — new chat",
+    "prompts": [
+     {
+      "text": "> Meri bakery ki mobile website banao",
+      "at": "l1"
+     },
+     {
+      "text": "+ WhatsApp order button add karo",
+      "at": "l2"
+     }
+    ],
+    "results": [
+     {
+      "text": "index.html ready",
+      "at": "l2+0.9"
+     },
+     {
+      "text": "Mobile responsive",
+      "at": "l2+1.15"
+     },
+     {
+      "text": "WhatsApp button added",
+      "at": "l2+1.4"
+     }
+    ],
+    "cards": [
+     {
+      "title": "Claude / ChatGPT",
+      "sub": "Free plan chalega"
+     },
+     {
+      "chip": "₹0 / MO",
+      "title": "No coding needed",
+      "sub": "100% copy-paste",
+      "green": true
+     }
+    ]
+   }
+  },
+  {
+   "lines": [
+    9,
+    10
+   ],
+   "card": "steps",
+   "params": {
+    "window": "app.netlify.com/drop",
+    "items": [
+     {
+      "title": "Folder drag & drop karo",
+      "sub": "Netlify Drop · free",
+      "at": 0.5
+     },
+     {
+      "title": "Upload 100%",
+      "sub": "2 minute",
+      "at": "l0+1.6"
+     },
+     {
+      "title": "Site is live",
+      "sub": "sharma-bakery.netlify.app",
+      "at": "l1+0.1"
+     }
+    ]
+   }
+  },
+  {
+   "lines": [
+    11,
+    13
+   ],
+   "card": "chat",
+   "params": {
+    "label": "Step 3 · Demo dikhao",
+    "contact": "Sharma Bakery",
+    "phone": {
+     "title": "SHARMA",
+     "subtitle": "BAKERY"
+    },
+    "messages": [
+     {
+      "text": "Bhaiya, aapki dukaan ki website",
+      "mine": true,
+      "at": "l1+0.1"
+     },
+     {
+      "text": "bana di hai — dekho!",
+      "mine": true,
+      "at": "l1+0.9"
+     },
+     {
+      "text": "Arre wah! Kitne ka hai?",
+      "at": "l2+0.2"
+     },
+     {
+      "text": "Sirf ₹10,000",
+      "mine": true,
+      "at": "l2+1.0"
+     }
+    ],
+    "stamp": "DEAL ✓"
+   }
+  },
+  {
+   "lines": [
+    14,
+    16
+   ],
+   "card": "stats",
+   "params": {
+    "window": "earnings — this month",
+    "label": "Monthly earnings",
+    "start_value": 10000,
+    "end_value": 100000,
+    "style": "inr",
+    "grow_at": "l1+0.1",
+    "bars": 10,
+    "bar_label_fmt": "{n} clients",
+    "footer": "× ₹10,000 per website",
+    "chip": "+ ₹1,000 / mo maintenance",
+    "chip_at": "l2+0.2"
+   }
+  },
+  {
+   "lines": [
+    17,
+    18
+   ],
+   "card": "crosses",
+   "params": {
+    "items": [
+     {
+      "title": "Office",
+      "sub": "Rent nahi"
+     },
+     {
+      "title": "Degree",
+      "sub": "Zaroori nahi"
+     },
+     {
+      "title": "Coding",
+      "sub": "AI karega"
+     }
+    ],
+    "final": {
+     "title": "Bas ek laptop",
+     "sub": "+ pehla client",
+     "bar_label": "Himmat",
+     "at": "l1"
+    }
+   }
+  },
+  {
+   "lines": [
+    19,
+    20
+   ],
+   "card": "cta",
+   "params": {
+    "keyword": "WEBSITE",
+    "name": "Jayant Ke Guides",
+    "initials": "JK",
+    "dm_text": "Prompt + Setup Guide bhej diya"
+   }
+  }
+ ],
+ "caption": "Coding seekhne mein 6 mahine mat lagao. Pehla client 15 minute ki website se bhi mil sakta hai.\n\n3 step:\n1. Claude ya ChatGPT se website banwao\n2. Netlify pe free mein live karo\n3. Apne area ki dukaanon ko demo dikhao\n\n₹10,000 × 10 client = ₹1 lakh. Ye guarantee nahi, math hai. Mehnat aapki.\n\nComment mein WEBSITE likho, main exact prompt bhej dunga.\n\n#aitools #websitedesign #sidehustle #chatgpt #claudeai"
+}
