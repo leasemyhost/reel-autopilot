@@ -1,4 +1,4 @@
-name: token-check
+name: token-refresh
 on:
   schedule:
     - cron: "0 4 */7 * *"
@@ -6,15 +6,15 @@ on:
 permissions:
   issues: write
 jobs:
-  check:
+  refresh:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Page token still valid
+      - name: Refresh Instagram long-lived token (extends 60 days)
         env:
           TOK: ${{ secrets.IG_ACCESS_TOKEN }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          R=$(curl -s "https://graph.facebook.com/v22.0/me?fields=id,name&access_token=$TOK")
-          echo "$R" | grep -q '"id"' && echo "token ok" && exit 0
-          gh issue create -R "$GITHUB_REPOSITORY" -t "Instagram/Facebook token kaam nahi kar raha - naya token chahiye" -b "Response: $(echo $R | head -c 300)" || true
+          R=$(curl -s "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$TOK")
+          echo "$R" | grep -q expires_in && echo "token refreshed" && exit 0
+          gh issue create -R "$GITHUB_REPOSITORY" -t "Instagram token refresh fail - naya token chahiye" -b "Response: $(echo $R | head -c 300)" || true
           exit 1
