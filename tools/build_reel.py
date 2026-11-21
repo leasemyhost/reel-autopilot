@@ -115,9 +115,17 @@ def main():
     ap.add_argument("build")
     ap.add_argument("--preview", action="store_true")
     ap.add_argument("--jobs", type=int, default=os.cpu_count())
+    ap.add_argument("--estimate", action="store_true", help="no voice yet: estimate line times from text length (preview only)")
     a = ap.parse_args()
     spec = json.load(open(a.spec))
     bdir = Path(a.build)
+    if a.estimate:
+        bdir.mkdir(parents=True, exist_ok=True)
+        B, t = [0.0], 0.0
+        for l in spec["lines"]:
+            t += max(1.2, len(l["hi"].replace(" ", "")) / 13.0)
+            B.append(round(t, 2))
+        json.dump(B, open(bdir / "line_times.json", "w"))
     B = json.load(open(bdir / "line_times.json"))
     assert len(B) == len(spec["lines"]) + 1, "line_times count mismatch"
     setup(spec, B)

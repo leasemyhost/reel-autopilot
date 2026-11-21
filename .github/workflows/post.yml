@@ -1,22 +1,31 @@
-name: post-reel
+name: build-and-post-reel
 on:
   schedule:
-    - cron: "30 3 * * *"    # 09:00 IST
-    - cron: "30 7 * * *"    # 13:00 IST
-    - cron: "30 13 * * *"   # 19:00 IST
+    - cron: "35 3 * * *"    # ~09:05 IST post (build starts 09:05, posts ~09:15)
+    - cron: "35 7 * * *"    # ~13:05 IST
+    - cron: "35 13 * * *"   # ~19:05 IST
   workflow_dispatch:
     inputs:
       slot:
         description: morning / noon / evening
         required: false
+      no_post:
+        description: "true = sirf video banao, post mat karo (test)"
+        required: false
+        default: "false"
 permissions:
   contents: write
-concurrency: post-reel
+concurrency: reel-autopilot
 jobs:
-  post:
+  reel:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+      - name: Setup
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q pillow numpy fonttools
       - name: Pick slot
         id: slot
         run: |
@@ -24,12 +33,23 @@ jobs:
           S="${{ github.event.inputs.slot }}"
           if [ -z "$S" ]; then if [ "$H" -lt 11 ]; then S=morning; elif [ "$H" -lt 16 ]; then S=noon; else S=evening; fi; fi
           echo "slot=$S" >> $GITHUB_OUTPUT
-      - name: Publish
+      - name: Voice + render + post
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST || 'graph.instagram.com' }}
-        run: python3 tools/post_instagram.py --slot ${{ steps.slot.outputs.slot }}
+        run: |
+          if [ "${{ github.event.inputs.no_post }}" = "true" ]; then NP=--no-post; else NP=; fi
+          python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }} $NP
+      - name: Upload video (artifact, 7 days)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel-${{ steps.slot.outputs.slot }}-${{ github.run_id }}
+          path: build/*/reel.mp4
+          retention-days: 7
+          if-no-files-found: ignore
       - name: Insights
         if: always()
         env:
@@ -42,6 +62,6 @@ jobs:
         run: |
           git config user.name "reel-autopilot"
           git config user.email "reel-autopilot@users.noreply.github.com"
-          git add -A queue posted data || true
-          git commit -m "post: ${{ steps.slot.outputs.slot }} $(date -u +%F)" || exit 0
+          git add -A specs posted data
+          git commit -m "reel: ${{ steps.slot.outputs.slot }} $(date -u +%F)" || exit 0
           git pull --rebase && git push

@@ -17,21 +17,17 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
    - `cap`: Roman Hinglish caption, 2-3 keywords `[Bracket]` mein (bracket ke baad punctuation mat lagao).
    - Income/number claims: sirf math/example ("₹10,000 x 10 = ₹1 lakh"), kabhi guarantee nahi.
      Kisi asli insaan/brand ke naam se jhoothi baat ya fake testimonial nahi.
-4. **Spec** `specs/<YYYY-MM-DD>-<slot>.json` likho (format: `specs/example-ai-website.json`).
+4. **Spec** `specs/pending/<YYYY-MM-DD>-<slot>.json` likho (format: `specs/example-ai-website.json`, `"slot"` field zaroori).
    6-8 sections, har section 2-3 lines, alag-alag card types (engine/cards.py ki docstrings dekho):
    hero, list_scan, terminal, chat, stats, crosses, compare, steps, big_number, cta (aakhri section hamesha cta).
-   Card text chhota rakho (fit_text auto-shrink karta hai, lekin 30 chars se kam best).
-5. **Voice**: `python3 tools/tts_gemini.py specs/<id>.json build/<id>` (Sadachbia, $GEMINI_API_KEY).
-6. **Preview**: `python3 tools/build_reel.py specs/<id>.json build/<id> --preview` -> `build/<id>/preview/sheet.png`
-   ko Read karke dekho: text kat to nahi raha, overlap to nahi, caption sahi. Galti ho to spec theek karo.
-7. **Render**: `python3 tools/build_reel.py specs/<id>.json build/<id>` -> `build/<id>/reel.mp4`.
-   ffprobe se check: 1080x1920, audio stream, 30-60 sec.
-8. **Caption** (`.claude/skills/ig-caption/caption.py` se lint): pehli line hook, 3-5 lines value,
-   CTA keyword, 3-5 hashtags. Hinglish.
-9. **Queue**: `queue/<id>/` mein `reel.mp4`, `caption.txt`, `meta.json`
-   (`{"status":"ready","slot":"morning|noon|evening","created":ISO,"title","topic","hook","sources":[urls]}`).
-   `data/topics_log.json` mein topic append. Commit + push (`git -c push.negotiate=true push`).
-10. GitHub Actions slot time par apne aap post karega (`.github/workflows/post.yml`).
+   Card text chhota rakho (30 chars se kam best). `caption` field mein poora Instagram caption
+   (`.claude/skills/ig-caption/caption.py` se lint: pehli line hook, value lines, CTA keyword, 3-5 hashtags).
+5. **Layout check** (is cloud se Gemini block hai, isliye voice yahan nahi banti):
+   `python3 tools/build_reel.py specs/pending/<id>.json build/<id> --estimate --preview` ->
+   `build/<id>/preview/sheet.png` Read karke dekho: text kat to nahi raha, overlap nahi, captions sahi. Galti ho to spec theek karo.
+6. `data/topics_log.json` mein topic append. Commit + push (`git -c push.negotiate=true push`). `build/` commit mat karo.
+7. GitHub Actions (`.github/workflows/post.yml`) slot time par: Sadachbia voice (Gemini) -> render -> checks -> Instagram post
+   -> `posted/<id>/` mein meta + caption. Video Actions artifact mein 7 din rehta hai.
 
 ## Weekly review (Sunday run)
 `data/insights.json` padho: views, reach, avg watch time, shares, saves. Top 3 aur bottom 3 reels ke hooks/topics
