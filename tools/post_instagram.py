@@ -53,14 +53,18 @@ def next_item(slot=None):
     return items[0][2:] if items else (None, None)
 
 
-def publish(video, caption, uid, tok):
+def publish(video, caption, uid, tok, video_url=None):
     base = f"https://{HOST}/{VER}"
     c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
                                            "share_to_feed": "true", "access_token": tok})
     cid = c["id"]
     uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{VER}/{cid}"
     size = video.stat().st_size
-    upload_binary(uri, video, tok)
+    video_url = video_url or os.environ.get("PUBLIC_VIDEO_URL")
+    if video_url:  # Meta fetches the file itself - works with the system-user token
+        api("POST", uri, headers={"Authorization": f"OAuth {tok}", "file_url": video_url})
+    else:
+        upload_binary(uri, video, tok)
     for _ in range(60):
         st = api("GET", f"{base}/{cid}", {"fields": "status_code,status", "access_token": tok})
         if st.get("status_code") == "FINISHED":

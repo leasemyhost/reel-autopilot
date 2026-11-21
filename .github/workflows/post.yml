@@ -47,7 +47,10 @@ jobs:
           fi
       - name: Post on time
         if: steps.fetch.outputs.found == '1'
-        run: python3 tools/post_ready.py ready
+        run: |
+          V=$(ls ready/*/reel.mp4 | head -1)
+          export PUBLIC_VIDEO_URL=$(tools/media_host.sh "$V" "$(basename $(dirname $V)).mp4")
+          python3 tools/post_ready.py ready
       - name: Fallback setup
         if: steps.fetch.outputs.found != '1'
         run: |
@@ -57,7 +60,7 @@ jobs:
         if: steps.fetch.outputs.found != '1'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }}
+        run: python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }} --build-only && V=$(ls ready/*/reel.mp4 | head -1) && export PUBLIC_VIDEO_URL=$(tools/media_host.sh "$V" "$(basename $(dirname $V)).mp4") && python3 tools/post_ready.py ready
       - name: Insights
         if: always()
         run: cd tools && python3 insights.py || true
