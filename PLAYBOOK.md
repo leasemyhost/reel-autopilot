@@ -8,11 +8,16 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
 2. **Topic research** (WebSearch, 4-8 searches): pichhle 48 ghante ke AI/tech news, naye free AI tools,
    Instagram/YouTube India par trending tech topics, aur "online kamai / AI se kaam" angles.
    - Pichhle 30 din ke topics_log se repeat mat karo.
-   - Pillars rotate karo: (a) naya AI tool demo, (b) AI se kamai/side hustle (realistic, bina guarantee),
-     (c) phone/PC hack ya productivity trick, (d) tech news jo aam aadmi ko affect kare.
+   - `data/learnings.md` sabse pehle padho. Abhi tak sabse strong: **"FREE AI tool/credits/jugaad + comment keyword"** (5x views).
+   - Pillars (weight): (a) **FREE AI tool / free credits / free alternative** 40%, (b) Claude/ChatGPT/Gemini ka
+     naya feature ya hidden trick 25%, (c) AI se kaam/kamai (realistic, bina guarantee) 20%, (d) AI/tech news jo aam
+     aadmi ko affect kare 15%. Sirf AI/tech niche - personal/food/travel nahi.
+   - "Free" claim tabhi jab official source se verified ho (pricing page, official blog). Limit/condition reel mein bolo.
    - Har fact jo reel mein jaaye, uska source verify karo. Agar pakka nahi to reel mein mat daalo.
 3. **Script** (`.claude/skills/ig-reel` ka process): 3 hooks likho, `hookscore.py` se score, best chuno.
-   35-50 sec, 14-21 lines, ek line = ek idea, hook pehle 2 sec mein, end mein ek keyword CTA.
+   30-45 sec, 12-18 lines, ek line = ek idea, hook pehle 2 sec mein.
+   - CTA: **"Follow karo + Save karo"** (default). Comment-keyword DM CTA ("Comment FREE") sirf tab jab
+     `data/dm_automation.json` mein `"enabled": true` ho - warna DM ka vaada mat karo.
    - `hi`: poora Devanagari Hindi (English shabd bhi Devanagari: "वेबसाइट", "एआई") - ye voice padhegi.
    - `cap`: Roman Hinglish caption, 2-3 keywords `[Bracket]` mein (bracket ke baad punctuation mat lagao).
    - Income/number claims: sirf math/example ("₹10,000 x 10 = ₹1 lakh"), kabhi guarantee nahi.
