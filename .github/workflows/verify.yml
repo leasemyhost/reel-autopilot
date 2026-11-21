@@ -1,0 +1,25 @@
+name: token-verify
+on:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Instagram token on both API hosts (token is never printed)
+        env:
+          TOK: ${{ secrets.IG_ACCESS_TOKEN }}
+          UID: ${{ secrets.IG_USER_ID }}
+        run: |
+          echo "token length: ${#TOK}"
+          for H in graph.instagram.com graph.facebook.com; do
+            echo "== $H /me"
+            curl -s "https://$H/v22.0/me?fields=id,username,name&access_token=$TOK" | head -c 400; echo
+          done
+          echo "== graph.facebook.com /me/accounts (IG business accounts)"
+          curl -s "https://graph.facebook.com/v22.0/me/accounts?fields=name,instagram_business_account{id,username}&access_token=$TOK" | head -c 600; echo
+          for ID in "$UID" 17841408507592740 17841451212571971; do
+            for H in graph.instagram.com graph.facebook.com; do
+              echo "== $H /$ID"
+              curl -s "https://$H/v22.0/$ID?fields=id,username,followers_count&access_token=$TOK" | head -c 300; echo
+            done
+          done
