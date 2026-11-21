@@ -5,7 +5,9 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
 
 ## Ek run ka kaam (ek reel)
 1. `git pull`. `data/topics_log.json` aur `data/insights.json` padho (kya chala, kya nahi).
-2. **Topic research** (WebSearch, 4-8 searches): pichhle 48 ghante ke AI/tech news, naye free AI tools,
+2. Agar `data/plan/<aaj ki date>.json` mein is slot ka title/angle hai to wahi topic lo (Jayant ne approve kiya hai);
+   facts phir bhi verify karo, jo verify na ho wo hata do. Warna:
+   **Topic research** (WebSearch, 4-8 searches): pichhle 48 ghante ke AI/tech news, naye free AI tools,
    Instagram/YouTube India par trending tech topics, aur "online kamai / AI se kaam" angles.
    - Pichhle 30 din ke topics_log se repeat mat karo.
    - `data/learnings.md` sabse pehle padho. Abhi tak sabse strong: **"FREE AI tool/credits/jugaad + comment keyword"** (5x views).

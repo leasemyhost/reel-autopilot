@@ -1,0 +1,8 @@
+{
+  "morning": {"title": "Ye 5 AI tools bilkul FREE hain - paid wale bhool jaoge", "pillar": "free_tools",
+              "angle": "Gemini, Perplexity, Claude free plan, ek free video/image tool, ek free voice tool - har ek ka asli free limit official pricing page se verify karke bolo"},
+  "noon": {"title": "ChatGPT ke 2 naye features - phone se document scan + audio file se notes", "pillar": "chatgpt_claude_tricks",
+           "angle": "ChatGPT mobile document scanner + audio file upload; OpenAI help/blog se verify, free plan mein hai ya nahi saaf bolo"},
+  "evening": {"title": "AI se local dukaan ki website banao - pehla client aise milega", "pillar": "ai_kamai",
+              "angle": "Tier 2/3 city: AI website builder se 1 ghante mein site, WhatsApp pe demo bhejo; sirf example math (5 clients x Rs 3,000), koi guarantee nahi"}
+}
