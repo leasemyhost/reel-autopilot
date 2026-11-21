@@ -27,12 +27,19 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
    hero, list_scan, terminal, chat, stats, crosses, compare, steps, big_number, cta (aakhri section hamesha cta).
    Card text chhota rakho (30 chars se kam best). `caption` field mein poora Instagram caption
    (`.claude/skills/ig-caption/caption.py` se lint: pehli line hook, value lines, CTA keyword, 3-5 hashtags).
+   - **Trending tags/keywords** (2-3 searches): is topic ke liye abhi India mein kya search/trend ho raha hai
+     (tool ka naam, "free", "AI tools", Hindi keywords). Caption ki pehli 2 lines mein 2-3 search keywords
+     naturally daalo (IG search keywords se rank karta hai). Hashtags 3-5: 1 broad (#aitools), 2 niche
+     (#chatgpthindi, #aitoolsforfree), 1-2 topic-specific/trending (tool ya event ka naam). 30 hashtags spam nahi.
 5. **Layout check** (is cloud se Gemini block hai, isliye voice yahan nahi banti):
    `python3 tools/build_reel.py specs/pending/<id>.json build/<id> --estimate --preview` ->
    `build/<id>/preview/sheet.png` Read karke dekho: text kat to nahi raha, overlap nahi, captions sahi. Galti ho to spec theek karo.
 6. `data/topics_log.json` mein topic append. Commit + push (`git -c push.negotiate=true push`). `build/` commit mat karo.
-7. GitHub Actions (`.github/workflows/post.yml`) slot time par: Sadachbia voice (Gemini) -> render -> checks -> Instagram post
-   -> `posted/<id>/` mein meta + caption. Video Actions artifact mein 7 din rehta hai.
+7. GitHub Actions:
+   - `build.yml` post se **2 ghante pehle** (07:00 / 11:00 / 17:00 IST): Sadachbia voice (Gemini) -> render -> checks -> ready artifact.
+   - `post.yml` **exact time** (09:00 / 13:00 / 19:00 IST): ready reel Instagram par post -> `posted/<id>/meta.json`.
+     Ready reel na mile to wahi build + post kar deta hai (fallback).
+   - Isliye ye Claude run slot se kam se kam 3 ghante pehle spec push kare (05:20 / 09:20 / 15:20 IST).
 
 ## Weekly review (Sunday run)
 `data/insights.json` padho: views, reach, avg watch time, shares, saves. Top 3 aur bottom 3 reels ke hooks/topics

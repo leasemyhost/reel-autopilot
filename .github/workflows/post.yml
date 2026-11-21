@@ -1,36 +1,32 @@
-name: build-and-post-reel
+name: post-reel
+# Post time: 09:00, 13:00, 19:00 IST. Video build-reel ne 2h pehle bana diya hota hai.
 on:
   schedule:
-    - cron: "35 3 * * *"    # ~09:05 IST post (build starts 09:05, posts ~09:15)
-    - cron: "35 7 * * *"    # ~13:05 IST
-    - cron: "35 13 * * *"   # ~19:05 IST
+    - cron: "30 3 * * *"
+    - cron: "30 7 * * *"
+    - cron: "30 13 * * *"
   workflow_dispatch:
     inputs:
       slot:
         description: morning / noon / evening
-        required: false
-      no_post:
-        description: "true = sirf video banao, post mat karo (test)"
-        required: false
-        default: "false"
+        required: true
 permissions:
   contents: write
+  actions: read
 concurrency: reel-autopilot
 jobs:
-  reel:
+  post:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env:
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST || 'graph.facebook.com' }}
+      FB_PAGE_ID: ${{ vars.FB_PAGE_ID }}
+      FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
-      - name: Setup
-        run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-          pip install -q pillow numpy fonttools faster-whisper
-      - name: Cache whisper model
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/huggingface
-          key: whisper-small-v1
       - name: Pick slot
         id: slot
         run: |
@@ -38,31 +34,32 @@ jobs:
           S="${{ github.event.inputs.slot }}"
           if [ -z "$S" ]; then if [ "$H" -lt 11 ]; then S=morning; elif [ "$H" -lt 16 ]; then S=noon; else S=evening; fi; fi
           echo "slot=$S" >> $GITHUB_OUTPUT
-      - name: Voice + render + post
+      - name: Fetch ready reel
+        id: fetch
+        run: |
+          NAME="ready-${{ steps.slot.outputs.slot }}-$(TZ=Asia/Kolkata date +%F)"
+          ID=$(gh api "repos/${{ github.repository }}/actions/artifacts?name=$NAME&per_page=1" --jq '.artifacts[0].id // empty')
+          if [ -n "$ID" ]; then
+            gh api "repos/${{ github.repository }}/actions/artifacts/$ID/zip" > r.zip && mkdir -p ready && unzip -q r.zip -d ready
+            echo "found=1" >> $GITHUB_OUTPUT
+          else
+            echo "no ready reel ($NAME) - fallback: build now"; echo "found=0" >> $GITHUB_OUTPUT
+          fi
+      - name: Post on time
+        if: steps.fetch.outputs.found == '1'
+        run: python3 tools/post_ready.py ready
+      - name: Fallback setup
+        if: steps.fetch.outputs.found != '1'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q pillow numpy fonttools faster-whisper
+      - name: Fallback build + post
+        if: steps.fetch.outputs.found != '1'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST || 'graph.facebook.com' }}
-          FB_PAGE_ID: ${{ vars.FB_PAGE_ID }}
-          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
-        run: |
-          if [ "${{ github.event.inputs.no_post }}" = "true" ]; then NP=--no-post; else NP=; fi
-          python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }} $NP
-      - name: Upload video (artifact, 7 days)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: reel-${{ steps.slot.outputs.slot }}-${{ github.run_id }}
-          path: build/*/reel.mp4
-          retention-days: 7
-          if-no-files-found: ignore
+        run: python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }}
       - name: Insights
         if: always()
-        env:
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST || 'graph.facebook.com' }}
         run: cd tools && python3 insights.py || true
       - name: Commit
         if: always()
@@ -70,5 +67,5 @@ jobs:
           git config user.name "reel-autopilot"
           git config user.email "reel-autopilot@users.noreply.github.com"
           git add -A specs posted data
-          git commit -m "reel: ${{ steps.slot.outputs.slot }} $(date -u +%F)" || exit 0
+          git commit -m "post: ${{ steps.slot.outputs.slot }} $(date -u +%F)" || exit 0
           git pull --rebase && git push

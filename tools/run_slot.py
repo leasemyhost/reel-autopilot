@@ -1,6 +1,7 @@
 """GitHub Actions entrypoint: take the oldest pending spec for this slot -> Sadachbia voice -> render -> post -> archive.
 
-  python3 tools/run_slot.py --slot morning|noon|evening [--no-post]
+  python3 tools/run_slot.py --slot morning|noon|evening [--no-post | --build-only]
+  --build-only : render 2h early, write ready/<id>/{reel.mp4,ready.json}; tools/post_ready.py posts it on time.
 Pending specs live in specs/pending/<id>.json (written by the Claude scheduled run).
 """
 import argparse
@@ -25,6 +26,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--slot", required=True)
     ap.add_argument("--no-post", action="store_true")
+    ap.add_argument("--build-only", action="store_true")
     a = ap.parse_args()
     sp = pick(a.slot)
     if not sp:
@@ -49,7 +51,15 @@ def main():
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "caption.txt").write_text(spec["caption"].strip() + "\n")
     shutil.copy(sp, dest / "spec.json")
-    if a.no_post:
+    if a.build_only:
+        meta["status"] = "ready"
+        rd = ROOT / "ready" / rid
+        rd.mkdir(parents=True, exist_ok=True)
+        shutil.copy(b / "reel.mp4", rd / "reel.mp4")
+        json.dump({"id": rid, "caption": spec["caption"].strip(), "meta": meta}, open(rd / "ready.json", "w"),
+                  indent=2, ensure_ascii=False)
+        print("ready for posting:", rd)
+    elif a.no_post:
         meta["status"] = "built"
     else:
         from post_instagram import publish
