@@ -61,6 +61,9 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }} --build-only && V=$(ls ready/*/reel.mp4 | head -1) && export PUBLIC_VIDEO_URL=$(tools/media_host.sh "$V" "$(basename $(dirname $V)).mp4") && python3 tools/post_ready.py ready
+      - name: Remove temp media
+        if: always()
+        run: for a in $(gh release view media -R ${{ github.repository }} --json assets --jq '.assets[].name' 2>/dev/null); do gh release delete-asset media "$a" -R ${{ github.repository }} -y; done || true
       - name: Insights
         if: always()
         run: cd tools && python3 insights.py || true

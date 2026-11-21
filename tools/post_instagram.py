@@ -55,16 +55,16 @@ def next_item(slot=None):
 
 def publish(video, caption, uid, tok, video_url=None):
     base = f"https://{HOST}/{VER}"
-    c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
-                                           "share_to_feed": "true", "access_token": tok})
-    cid = c["id"]
-    uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{VER}/{cid}"
-    size = video.stat().st_size
     video_url = video_url or os.environ.get("PUBLIC_VIDEO_URL")
-    if video_url:  # Meta fetches the file itself - works with the system-user token
-        api("POST", uri, headers={"Authorization": f"OAuth {tok}", "file_url": video_url})
+    if video_url:  # tested: classic video_url is reliable with the system-user token
+        c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "video_url": video_url, "caption": caption,
+                                               "share_to_feed": "true", "access_token": tok})
+        cid = c["id"]
     else:
-        upload_binary(uri, video, tok)
+        c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
+                                               "share_to_feed": "true", "access_token": tok})
+        cid = c["id"]
+        upload_binary(c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{VER}/{cid}", video, tok)
     for _ in range(60):
         st = api("GET", f"{base}/{cid}", {"fields": "status_code,status", "access_token": tok})
         if st.get("status_code") == "FINISHED":
