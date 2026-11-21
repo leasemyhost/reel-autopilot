@@ -57,6 +57,15 @@ def main():
         media_id, link = publish(b / "reel.mp4", spec["caption"].strip(), os.environ["IG_USER_ID"], os.environ["IG_ACCESS_TOKEN"])
         meta.update(status="posted", media_id=media_id, permalink=link, posted_at=dt.datetime.utcnow().isoformat() + "Z")
         print("posted:", media_id, link)
+        if os.environ.get("FB_PAGE_ID") and os.environ.get("FB_PAGE_TOKEN"):
+            try:
+                from post_instagram import publish_facebook_reel
+                meta["fb_video_id"] = publish_facebook_reel(b / "reel.mp4", spec["caption"].strip(),
+                                                            os.environ["FB_PAGE_ID"], os.environ["FB_PAGE_TOKEN"])
+                print("facebook reel:", meta["fb_video_id"])
+            except Exception as e:  # IG already posted - don't fail the run
+                meta["fb_error"] = str(e)[:300]
+                print("facebook reel failed:", e)
     json.dump(meta, open(dest / "meta.json", "w"), indent=2, ensure_ascii=False)
     sp.unlink()
     return 0

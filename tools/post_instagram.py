@@ -99,3 +99,16 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+def publish_facebook_reel(video, caption, page_id, page_token):
+    """Facebook Page Reels API: start -> binary upload -> finish (published)."""
+    base = f"https://graph.facebook.com/{VER}"
+    st = api("POST", f"{base}/{page_id}/video_reels", {"upload_phase": "start", "access_token": page_token})
+    vid = st["video_id"]
+    up = st.get("upload_url") or f"https://rupload.facebook.com/video-upload/{VER}/{vid}"
+    api("POST", up, headers={"Authorization": f"OAuth {page_token}", "offset": "0", "file_size": str(video.stat().st_size)},
+        data=video.read_bytes())
+    api("POST", f"{base}/{page_id}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
+                                                  "description": caption, "access_token": page_token})
+    return vid

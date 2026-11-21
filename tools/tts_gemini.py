@@ -20,8 +20,9 @@ import numpy as np
 
 VOICE = os.environ.get("REEL_VOICE", "Sadachbia")
 MODELS = [m for m in os.environ.get("GEMINI_TTS_MODELS", "gemini-2.5-flash-preview-tts,gemini-2.5-flash-tts,gemini-2.5-pro-preview-tts").split(",") if m]
-STYLE = os.environ.get("REEL_STYLE", "Read this in Hindi like an energetic young Indian Instagram reel creator, fast and punchy, "
-                                     "with a short clear pause at every line break")
+STYLE = os.environ.get("REEL_STYLE", "Read this in Hindi like an energetic young Indian Instagram reel creator, fast and punchy. "
+                                     "Take a clear pause of about one second at every blank line between sentences")
+MODE = os.environ.get("TTS_MODE", "reel")  # reel = 1 API call per reel (free-tier friendly), section = 1 call per section
 SR_IN, SR = 24000, 48000
 GAP = 0.12
 
@@ -48,6 +49,8 @@ def tts(text):
             except urllib.error.HTTPError as e:
                 last = f"{model}: HTTP {e.code} {e.read()[:300]!r}"
                 if e.code == 429:
+                    if "PerDay" in last or "per day" in last.lower() or "quota" in last.lower() and attempt >= 1:
+                        break
                     time.sleep(25 * (attempt + 1))
                     continue
                 if e.code in (500, 503):
@@ -105,7 +108,7 @@ def align_lines(x, sr, lines):
     for i in range(1, n + 1):
         for j in range(1, m + 1):
             skip = dp[i][j - 1]
-            take = dp[i - 1][j - 1] + abs(ps[j - 1][0] - exp[i - 1]) - 0.6 * ps[j - 1][1]
+            take = dp[i - 1][j - 1] + abs(ps[j - 1][0] - exp[i - 1]) - 2.5 * ps[j - 1][1]
             dp[i][j], bk[i][j] = (take, True) if take < skip else (skip, False)
     if m < n or dp[n][m] >= INF:
         return [0.0] + exp + [dur]
@@ -124,18 +127,49 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     lines = [l["hi"] for l in spec["lines"]]
     chunks, bounds, t0 = [], [], 0.0
-    for sec in spec["sections"]:
-        a, b = sec["lines"]
-        text = "\n".join(lines[a:b + 1])
+    groups = [tuple(sec["lines"]) for sec in spec["sections"]] if MODE == "section" else [(0, len(lines) - 1)]
+    for a, b in groups:
+        text = "\n\n".join(lines[a:b + 1])
         x = trim(tts(text))
         bb = align_lines(x, SR_IN, lines[a:b + 1])
         bounds += [t0 + v for v in bb[:-1]]
         chunks.append(x)
         chunks.append(np.zeros(int(GAP * SR_IN), np.float32))
         t0 += x.size / SR_IN + GAP
-        time.sleep(float(os.environ.get("TTS_SLEEP", "4")))
+        if len(groups) > 1:
+            time.sleep(float(os.environ.get("TTS_SLEEP", "4")))
     bounds.append(t0)
     voice = np.concatenate(chunks)
+    # refine with whisper word timestamps when available (GitHub Actions); pause-DP bounds stay as fallback
+    if os.environ.get("ALIGN_WHISPER", "1") == "1":
+        try:
+            import soundfile  # noqa: F401
+        except Exception:
+            pass
+        try:
+            from align_whisper import line_starts
+            tmpw = out / "voice_16k.wav"
+            raw16 = out / "v16.raw"
+            (voice * 32767).astype(np.int16).tofile(raw16)
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "s16le", "-ar", str(SR_IN), "-ac", "1", "-i", str(raw16),
+                            "-ar", "16000", str(tmpw)], check=True)
+            raw16.unlink()
+            ws = line_starts(tmpw, lines)
+            if ws:
+                refined = [0.0]
+                for i in range(1, len(lines)):
+                    w = ws[i]
+                    # whisper word start sits just after the pause; keep it unless it disagrees wildly with order
+                    if w is not None and refined[-1] + 0.4 < w < t0 - 0.3:
+                        refined.append(round(max(0.0, w - 0.08), 3))
+                    else:
+                        refined.append(max(bounds[i], refined[-1] + 0.4))
+                refined.append(t0)
+                print("whisper alignment used; max shift", round(max(abs(a - b) for a, b in zip(refined, bounds)), 2))
+                bounds = refined
+            tmpw.unlink(missing_ok=True)
+        except Exception as e:  # noqa
+            print("whisper alignment skipped:", e)
     raw = out / "voice_24k.raw"
     (voice * 32767).astype(np.int16).tofile(raw)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "s16le", "-ar", str(SR_IN), "-ac", "1", "-i", str(raw),

@@ -1,20 +1,20 @@
 name: token-check
 on:
   schedule:
-    - cron: "0 4 */10 * *"
+    - cron: "0 4 */7 * *"
   workflow_dispatch:
 permissions:
   issues: write
 jobs:
-  refresh:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - name: Refresh long-lived Instagram token (extends 60 days)
+      - name: Check Page token still valid
         env:
           TOK: ${{ secrets.IG_ACCESS_TOKEN }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          R=$(curl -s "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$TOK")
-          echo "$R" | grep -q access_token && echo "token refreshed" && exit 0
-          gh issue create -R "$GITHUB_REPOSITORY" -t "Instagram token refresh fail - naya token chahiye" -b "Response: $(echo $R | head -c 300)" || true
+          R=$(curl -s "https://graph.facebook.com/v22.0/me?fields=id,name&access_token=$TOK")
+          echo "$R" | grep -q '"id"' && echo "token ok" && exit 0
+          gh issue create -R "$GITHUB_REPOSITORY" -t "Instagram/Facebook token kaam nahi kar raha - naya token chahiye" -b "Response: $(echo $R | head -c 300)" || true
           exit 1
