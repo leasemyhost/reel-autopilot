@@ -68,7 +68,9 @@ Goal: roz 3 reels (har reel 1-2 min) (subah 9, dopahar 1, shaam 7 IST) - views a
    `gh api -X POST repos/leasemyhost/reel-autopilot/actions/workflows/build.yml/dispatches -f ref=main -f 'inputs[slot]=<slot>'`
 7. GitHub Actions:
    - `build.yml` post se **2 ghante pehle** (07:00 / 11:00 / 17:00 IST): Sadachbia voice (Gemini) -> render -> checks -> ready artifact.
-   - `post.yml` **exact time** (09:00 / 13:00 / 19:00 IST): ready reel Instagram par post -> `posted/<id>/meta.json`.
+   - `post.yml` **exact time** (09:00 / 13:00 / 19:00 IST): ready reel dono accounts par post - @jayantkeguidess (main)
+     aur @jayantkeguides (17.6K, `IG_USER_ID_2`) -> `posted/<id>/meta.json` (`permalink`, `permalink_2`).
+     Time Claude scheduled task (8:56/12:56/18:56) dispatch karta hai, kyunki GitHub cron is repo pe nahi chalta.
      Ready reel na mile to wahi build + post kar deta hai (fallback).
    - Isliye ye Claude run slot se kam se kam 3 ghante pehle spec push kare (05:20 / 09:20 / 15:20 IST).
 
