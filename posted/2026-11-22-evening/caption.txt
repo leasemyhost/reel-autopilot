@@ -1,0 +1,16 @@
+Free AI website banaye bina coding: Gemini Canvas se mohalle ki dukaan ki site, aur pehla client dhoondho.
+
+3 step:
+1. Gemini kholo, Canvas chuno, likho: "meri bakery ki mobile website banao, WhatsApp order button ke saath"
+2. Preview dekho, badlav bolo, phir Share dabake link copy karo
+3. Wo link dukaan wale ko WhatsApp karo: "Bhaiya, aapki dukaan ki website banayi hai"
+
+Haan bole to: code ko index.html file mein save karo, Netlify Drop pe daalo aur Netlify ke free plan pe sign up karke site claim karo.
+
+Sach bhi jaan lo: Canvas sabhi Gemini users ke liye hai, Google account chahiye. Gemini ka Web page option abhi 18+ ke liye hai. Free plans ki limits Google aur Netlify badal sakte hain.
+
+5 dukaan x Rs 3,000 = Rs 15,000. Ye sirf example hai, guarantee nahi. Mehnat tumhari.
+
+Prompt chahiye? Comment mein WEBSITE likho, sabko reply karunga. Roz aisi ek kaam ki AI trick ke liye follow karo.
+
+#aitools #aihindi #aitoolsforfree #geminiai #websitedesign
