@@ -15,10 +15,6 @@
       "cap": "[ChatGPT] ab audio se [Notes] banata"
     },
     {
-      "hi": "मीटिंग, क्लास या लंबा वॉइस नोट, बस फ़ाइल डालो।",
-      "cap": "[Meeting] ho ya class, bas file daalo"
-    },
-    {
       "hi": "प्लस बटन दबाओ और अपनी ऑडियो फ़ाइल चुनो।",
       "cap": "[Plus] dabao, audio file chuno"
     },
@@ -27,16 +23,8 @@
       "cap": "Likho: [Transcript] aur notes do"
     },
     {
-      "hi": "ये मीटिंग का रीकैप या फ़ॉलो-अप ईमेल भी लिख देता है।",
-      "cap": "[Recap] ya [Email] bhi likh deta"
-    },
-    {
       "hi": "एक फ़ाइल पाँच सौ बारह एमबी तक चल जाती है।",
       "cap": "[512MB] tak ki file chalegi"
-    },
-    {
-      "hi": "एमपीथ्री, एमफ़ोरए, वेव, सब चलते हैं।",
-      "cap": "[MP3] M4A WAV sab chalte"
     },
     {
       "hi": "पर सच सुनो। फ़्री प्लान में ये अभी नहीं है।",
@@ -45,10 +33,6 @@
     {
       "hi": "ऑडियो अपलोड सिर्फ़ पेड प्लान वालों के लिए है।",
       "cap": "Audio upload sirf [Paid] plan mein"
-    },
-    {
-      "hi": "और भाषा के हिसाब से रिज़ल्ट बदल सकता है, एक बार चेक करना।",
-      "cap": "Result ek baar [Check] karna"
     },
     {
       "hi": "फ़्री वाले क्या करें? कैमरा वाला तरीका।",
@@ -75,7 +59,7 @@
     {
       "lines": [
         0,
-        2
+        1
       ],
       "card": "hero",
       "params": {
@@ -87,7 +71,7 @@
         "stat_from": 60,
         "stat_to": 1,
         "stat_style": "plain",
-        "stat_at": "l2",
+        "stat_at": "l1",
         "stat_chip": "minute",
         "checklist_title": "Kis kaam ka",
         "items": [
@@ -95,7 +79,7 @@
           "02  Class lecture",
           "03  Voice note"
         ],
-        "check_at": "l2+0.3",
+        "check_at": "l1+0.3",
         "phone": {
           "title": "AUDIO",
           "subtitle": "TO NOTES",
@@ -106,8 +90,8 @@
     },
     {
       "lines": [
-        3,
-        5
+        2,
+        3
       ],
       "card": "steps",
       "params": {
@@ -122,19 +106,14 @@
             "title": "Transcript + notes",
             "sub": "Bas likh ke maango",
             "at": "l1"
-          },
-          {
-            "title": "Recap ya email",
-            "sub": "Follow-up bhi ready",
-            "at": "l2"
           }
         ]
       }
     },
     {
       "lines": [
-        6,
-        7
+        4,
+        4
       ],
       "card": "big_number",
       "params": {
@@ -153,8 +132,8 @@
     },
     {
       "lines": [
-        8,
-        10
+        5,
+        6
       ],
       "card": "compare",
       "params": {
@@ -172,14 +151,13 @@
             "Transcript + notes"
           ]
         },
-        "right_at": "l1",
-        "verdict": "Result check zaroor karo"
+        "right_at": "l1"
       }
     },
     {
       "lines": [
-        11,
-        13
+        7,
+        9
       ],
       "card": "chat",
       "params": {
@@ -212,8 +190,8 @@
     },
     {
       "lines": [
-        14,
-        15
+        10,
+        11
       ],
       "card": "cta",
       "params": {
