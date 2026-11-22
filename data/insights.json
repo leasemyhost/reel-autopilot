@@ -2,10 +2,19 @@
   "account": {
     "id": "17841451212571971",
     "followers_count": 18,
-    "media_count": 11,
+    "media_count": 12,
     "username": "jayantkeguidess"
   },
   "reels": [
+    {
+      "id": "2026-11-22-evening",
+      "title": "Dukaan ki website, free AI",
+      "hook": "Dukaan ki website, free AI se, 1 ghante mein",
+      "topic": "Gemini Canvas (free) se local dukaan ki website + share link WhatsApp demo + Netlify free plan pe pakki site; example math 5 x Rs 3,000",
+      "posted_at": "2026-11-22T13:27:52.685399Z",
+      "permalink": "https://www.instagram.com/reel/DgC6RZUT-zA/",
+      "error": "GET https://graph.facebook.com/v22.0/18115057439461089/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
+    },
     {
       "id": "2026-11-22-morning",
       "title": "5 free AI tools",
