@@ -81,19 +81,34 @@ def mono(size, bold=False):
 # ------------------------------------------------------------------ background
 @lru_cache(maxsize=1)
 def background():
-    img = Image.new("RGB", (W, H), BG)
-    d = ImageDraw.Draw(img)
+    """Dark gradient bg: deep indigo top -> near-black bottom + soft orange/blue glows + faint grid."""
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    v = (yy / H)[..., None]
+    top, bot = np.array([30, 22, 52], np.float32), np.array([9, 10, 16], np.float32)
+    arr = top * (1 - v) + bot * v
+
+    def glow(cx, cy, r, col, k):
+        g = np.exp(-(((xx - cx) ** 2 + (yy - cy) ** 2) / (2 * r * r)))[..., None]
+        return g * np.array(col, np.float32) * k
+
+    arr += glow(W * 0.92, H * 0.08, 520, (217, 98, 43), 0.30)   # warm orange, top-right
+    arr += glow(W * 0.05, H * 0.62, 600, (60, 80, 200), 0.22)   # cool blue, left-middle
+    arr += glow(W * 0.85, H * 0.95, 480, (217, 98, 43), 0.14)   # warm, bottom-right
+    img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGB")
+    grid = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(grid)
     for x in range(0, W, 54):
-        d.line([x, 0, x, H], fill=GRID, width=1)
+        d.line([x, 0, x, H], fill=(255, 255, 255, 9), width=1)
     for y in range(0, H, 54):
-        d.line([0, y, W, y], fill=GRID, width=1)
+        d.line([0, y, W, y], fill=(255, 255, 255, 9), width=1)
+    img = img.convert("RGBA")
+    img.alpha_composite(grid)
     rng = np.random.default_rng(1)
-    noise = rng.normal(0, 2.0, (H, W, 1))
-    arr = np.asarray(img).astype(np.float32) + noise
-    yy, xx = np.mgrid[0:H, 0:W]
-    vig = 1 - 0.28 * (((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
-    arr = np.clip(arr * vig[..., None], 0, 255).astype(np.uint8)
-    return Image.fromarray(arr, "RGB").convert("RGBA")
+    a = np.asarray(img).astype(np.float32)
+    a[..., :3] += rng.normal(0, 2.0, (H, W, 1))
+    vig = 1 - 0.22 * (((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
+    a[..., :3] *= vig[..., None]
+    return Image.fromarray(np.clip(a, 0, 255).astype(np.uint8), "RGBA")
 
 
 @lru_cache(maxsize=4)
