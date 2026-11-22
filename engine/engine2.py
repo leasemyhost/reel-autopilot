@@ -15,8 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 FONTS = ROOT / "assets/fonts"
 W, H, FPS = 1080, 1920, 30
 
-BG = (233, 228, 222)
-GRID = (224, 218, 211)
+BG = (13, 14, 19)          # dark theme (Jayant: 'background dark use karo')
+GRID = (25, 27, 34)
+CAP_INK = (246, 244, 240)  # caption text on dark bg
 ORANGE = (217, 98, 43)
 FLOWER = (242, 138, 96)
 INK = (31, 31, 36)
@@ -87,10 +88,10 @@ def background():
     for y in range(0, H, 54):
         d.line([0, y, W, y], fill=GRID, width=1)
     rng = np.random.default_rng(1)
-    noise = rng.normal(0, 3.2, (H, W, 1))
+    noise = rng.normal(0, 2.0, (H, W, 1))
     arr = np.asarray(img).astype(np.float32) + noise
     yy, xx = np.mgrid[0:H, 0:W]
-    vig = 1 - 0.06 * (((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
+    vig = 1 - 0.28 * (((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
     arr = np.clip(arr * vig[..., None], 0, 255).astype(np.uint8)
     return Image.fromarray(arr, "RGB").convert("RGBA")
 
@@ -113,12 +114,12 @@ def flower_sprite(size=400, blur=7):
             d.ellipse([px - w / 2, py - w / 2, px + w / 2, py + w / 2], fill=FLOWER + (255,))
     d.ellipse([c - s * 0.11, c - s * 0.11, c + s * 0.11, c + s * 0.11], fill=FLOWER + (255,))
     im = im.resize((size, size), Image.LANCZOS).filter(ImageFilter.GaussianBlur(blur))
-    a = im.split()[3].point(lambda v: int(v * 0.9))
+    a = im.split()[3].point(lambda v: int(v * 0.8))
     im.putalpha(a)
     return im
 
 
-FLOWERS = [(1010, 70, 1.0, 1), (20, 1080, 0.95, -1), (110, 1660, 1.0, 1)]
+FLOWERS = []  # Jayant: side flowers nahi chahiye
 
 
 def draw_background(t):
@@ -130,7 +131,7 @@ def draw_background(t):
             sp = sp.resize((int(sp.width * sc), int(sp.height * sc)), Image.BICUBIC)
         img.alpha_composite(sp, (int(cx - sp.width / 2), int(cy - sp.height / 2)))
     d = ImageDraw.Draw(img)
-    d.text((W / 2, 1795), HANDLE, font=sans(26, "Regular"), fill=(150, 146, 142), anchor="mm")
+    d.text((W / 2, 1795), HANDLE, font=sans(26, "Regular"), fill=(120, 122, 132), anchor="mm")
     return img
 
 
@@ -283,7 +284,7 @@ def parse_caption(text):
 
 
 _meas = ImageDraw.Draw(Image.new("RGB", (1, 1)))
-KW_SIZE, TX_SIZE = 66, 42
+KW_SIZE, TX_SIZE = 80, 54   # bade, bold - phone pe door se padhne layak
 
 
 def kw_runs(word):
@@ -305,10 +306,10 @@ def kw_runs(word):
 def tok_width(word, kw):
     if kw:
         return sum(_meas.textlength(s, font=f) for s, f in kw_runs(word)) + 36
-    return _meas.textlength(word, font=sans(TX_SIZE, "Medium"))
+    return _meas.textlength(word, font=sans(TX_SIZE, "Bold"))
 
 
-def layout(toks, maxw=960):
+def layout(toks, maxw=980):
     rows, cur, cw = [], [], 0
     gap_n, gap_k = 14, 8
     for i, (w, kw) in enumerate(toks):
@@ -329,7 +330,7 @@ def layout(toks, maxw=960):
 def kw_box(word):
     runs = kw_runs(word)
     tw = int(sum(_meas.textlength(s, font=f) for s, f in runs))
-    bw, bh = tw + 36, 92
+    bw, bh = tw + 40, 108
     im = Image.new("RGBA", (bw + 16, bh + 16), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     o = 8
@@ -359,7 +360,7 @@ def draw_caption(layer, text, t, start, dur, cy, fade_out_at=None):
     toks = parse_caption(text)
     times = word_times(toks, start, dur)
     rows = layout(toks)
-    row_h = [96 if any(k for _, k, *_ in r) else 62 for r in rows]
+    row_h = [112 if any(k for _, k, *_ in r) else 74 for r in rows]
     total_h = sum(row_h) + 6 * (len(rows) - 1)
     y = cy - total_h / 2
     alpha_all = 1.0
@@ -379,8 +380,8 @@ def draw_caption(layer, text, t, start, dur, cy, fade_out_at=None):
                     paste(layer, kw_box(w), x + tw / 2, y + rh / 2, scale=s, alpha=a, rot=(1 - ease_out(p)) * -6)
                 else:
                     dy = (1 - ease_out(p)) * 14
-                    col = tuple(int(BG[k] + (INK[k] - BG[k]) * a) for k in range(3))
-                    d.text((x, y + rh / 2 + dy), w, font=sans(TX_SIZE, "Medium"), fill=col, anchor="lm")
+                    col = tuple(int(BG[k] + (CAP_INK[k] - BG[k]) * a) for k in range(3))
+                    d.text((x, y + rh / 2 + dy), w, font=sans(TX_SIZE, "Bold"), fill=col, anchor="lm")
             x += tw
         y += rh + 6
     return [times[i] for i, (_, k) in enumerate(toks) if k]
