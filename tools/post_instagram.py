@@ -57,8 +57,10 @@ def publish(video, caption, uid, tok, video_url=None):
     base = f"https://{HOST}/{VER}"
     video_url = video_url or os.environ.get("PUBLIC_VIDEO_URL")
     if video_url:  # tested: classic video_url is reliable with the system-user token
-        c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "video_url": video_url, "caption": caption,
-                                               "share_to_feed": "true", "access_token": tok})
+        prm = {"media_type": "REELS", "video_url": video_url, "caption": caption, "share_to_feed": "true", "access_token": tok}
+        if os.environ.get("PUBLIC_COVER_URL"):
+            prm["cover_url"] = os.environ["PUBLIC_COVER_URL"]  # custom thumbnail
+        c = api("POST", f"{base}/{uid}/media", prm)
         cid = c["id"]
     else:
         c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": caption,

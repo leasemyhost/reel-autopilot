@@ -56,6 +56,8 @@ def main():
         rd = ROOT / "ready" / rid
         rd.mkdir(parents=True, exist_ok=True)
         shutil.copy(b / "reel.mp4", rd / "reel.mp4")
+        if (b / "cover.jpg").exists():
+            shutil.copy(b / "cover.jpg", rd / "cover.jpg")
         json.dump({"id": rid, "caption": spec["caption"].strip(), "meta": meta}, open(rd / "ready.json", "w"),
                   indent=2, ensure_ascii=False)
         print("ready for posting:", rd)

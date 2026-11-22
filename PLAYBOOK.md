@@ -17,14 +17,21 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
    - "Free" claim tabhi jab official source se verified ho (pricing page, official blog). Limit/condition reel mein bolo.
    - Har fact jo reel mein jaaye, uska source verify karo. Agar pakka nahi to reel mein mat daalo.
 3. **Script** (`.claude/skills/ig-reel` ka process): 3 hooks likho, `hookscore.py` se score, best chuno.
-   30-45 sec, 12-18 lines, ek line = ek idea, hook pehle 2 sec mein.
-   - CTA: **"Follow karo + Save karo"** (default). Comment-keyword DM CTA ("Comment FREE") sirf tab jab
-     `data/dm_automation.json` mein `"enabled": true` ho - warna DM ka vaada mat karo.
+   **Jayant ke NIYAM (har reel mein zaroori):**
+   - **Hook 3 second mein**: pehli line 8 shabd se kam, pehle 3 sec mein poori bol di jaye. Hero card t=0 se dikhe.
+   - **Ek screen = ek idea**: har `cap` max 6-7 shabd, max 2 `[keyword]`. Lamba point ho to do lines mein todo.
+   - **30-45 second**: 12-16 lines. 45 sec se upar kabhi nahi.
+   - **Bade, bold text**: card text chhota aur kam (har item 3-4 shabd). Choti detail card mein mat thoonso.
+   - **Aakhir mein saaf CTA**: comment keyword, jaise `Comment mein "REEL" likho` + Follow. Agar
+     `data/dm_automation.json` `"enabled": false` hai to DM/link ka vaada mat karo - bolo "agla part isi pe banega"
+     ya "comment karo, sabko reply karunga" (Jayant khud reply karte hain).
    - `hi`: poora Devanagari Hindi (English shabd bhi Devanagari: "वेबसाइट", "एआई") - ye voice padhegi.
    - `cap`: Roman Hinglish caption, 2-3 keywords `[Bracket]` mein (bracket ke baad punctuation mat lagao).
    - Income/number claims: sirf math/example ("₹10,000 x 10 = ₹1 lakh"), kabhi guarantee nahi.
      Kisi asli insaan/brand ke naam se jhoothi baat ya fake testimonial nahi.
 4. **Spec** `specs/pending/<YYYY-MM-DD>-<slot>.json` likho (format: `specs/example-ai-website.json`, `"slot"` field zaroori).
+   `"cover"` field: thumbnail ka bada text, caption syntax mein, max 6 shabd, 1-2 `[keyword]`
+   (jaise `"[ChatGPT] se [FREE] notes"`). Thumbnail khud banta hai (dark bg + hero card) aur reel ke saath lagta hai.
    6-8 sections, har section 2-3 lines, alag-alag card types (engine/cards.py ki docstrings dekho):
    hero, list_scan, terminal, chat, stats, crosses, compare, steps, big_number, cta (aakhri section hamesha cta).
    Card text chhota rakho (30 chars se kam best). `caption` field mein poora Instagram caption
@@ -35,7 +42,8 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
      (#chatgpthindi, #aitoolsforfree), 1-2 topic-specific/trending (tool ya event ka naam). 30 hashtags spam nahi.
 5. **Layout check** (is cloud se Gemini block hai, isliye voice yahan nahi banti):
    `python3 tools/build_reel.py specs/pending/<id>.json build/<id> --estimate --preview` ->
-   `build/<id>/preview/sheet.png` Read karke dekho: text kat to nahi raha, overlap nahi, captions sahi. Galti ho to spec theek karo.
+   `build/<id>/preview/sheet.png` aur `cover.jpg` Read karke dekho: text kat to nahi raha, overlap nahi, captions sahi,
+   har screen pe ek hi idea. Galti ho to spec theek karo.
 6. `data/topics_log.json` mein topic append. Commit + push (`git -c push.negotiate=true push`). `build/` commit mat karo.
    Push ke baad video turant banwao (GitHub cron kabhi-kabhi miss hota hai):
    `gh api -X POST repos/leasemyhost/reel-autopilot/actions/workflows/build.yml/dispatches -f ref=main -f 'inputs[slot]=<slot>'`

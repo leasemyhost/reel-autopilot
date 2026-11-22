@@ -53,9 +53,7 @@ jobs:
       - name: Post on time
         if: steps.slot.outputs.done != '1' && steps.fetch.outputs.found == '1'
         run: |
-          V=$(ls ready/*/reel.mp4 | head -1)
-          export PUBLIC_VIDEO_URL=$(tools/media_host.sh "$V" "$(basename $(dirname $V)).mp4")
-          python3 tools/post_ready.py ready
+          tools/publish_ready.sh
       - name: Fallback setup
         if: steps.slot.outputs.done != '1' && steps.fetch.outputs.found != '1'
         run: |
@@ -65,7 +63,7 @@ jobs:
         if: steps.slot.outputs.done != '1' && steps.fetch.outputs.found != '1'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }} --build-only && V=$(ls ready/*/reel.mp4 | head -1) && export PUBLIC_VIDEO_URL=$(tools/media_host.sh "$V" "$(basename $(dirname $V)).mp4") && python3 tools/post_ready.py ready
+        run: python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }} --build-only && tools/publish_ready.sh
       - name: Remove temp media
         if: always()
         run: for a in $(gh release view media -R ${{ github.repository }} --json assets --jq '.assets[].name' 2>/dev/null); do gh release delete-asset media "$a" -R ${{ github.repository }} -y; done || true

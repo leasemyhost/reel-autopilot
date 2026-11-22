@@ -109,6 +109,28 @@ def init_worker(spec, B):
     setup(spec, B)
 
 
+def make_cover(spec, B, out):
+    """Reel thumbnail: dark bg + big hook text + the hero card. spec["cover"] uses caption syntax ([kw])."""
+    text = spec.get("cover") or spec["lines"][0]["cap"]
+    a, b, fn, p = G["secs"][0]
+    t = B[b + 1] - 0.05  # hero card fully built
+    img = E.draw_background(1.0)
+    card = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    fn(card, t, [B[k] for k in range(a, b + 2)], None, p)
+    card = E.transform_layer(card, scale=0.82, dy=270)
+    img.alpha_composite(card)
+    old = (E.KW_SIZE, E.TX_SIZE)
+    E.KW_SIZE, E.TX_SIZE = 118, 78
+    E.kw_box.cache_clear()
+    top = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    E.draw_caption(top, text, 999, 0, 1, 470)
+    img.alpha_composite(top)
+    E.KW_SIZE, E.TX_SIZE = old
+    E.kw_box.cache_clear()
+    img.convert("RGB").save(out, quality=92)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("spec")
@@ -145,7 +167,8 @@ def main():
         for k, f in enumerate(fs):
             sheet.paste(Image.open(f).resize((270, 480)), ((k % 6) * 270, (k // 6) * 480))
         sheet.save(pdir / "sheet.png")
-        print("preview ->", pdir / "sheet.png")
+        make_cover(spec, B, pdir / "cover.jpg")
+        print("preview ->", pdir / "sheet.png", "+ cover.jpg")
         return
 
     fdir = bdir / "frames"
@@ -170,6 +193,7 @@ def main():
                         "-crf", "20", "-pix_fmt", "yuv420p", "-profile:v", "high", "-c:a", "aac", "-b:a", "192k",
                         "-ar", str(E.SR), "-t", f"{total:.2f}", "-movflags", "+faststart", str(bdir / "reel.mp4")], check=True)
     shutil.rmtree(fdir)
+    make_cover(spec, B, bdir / "cover.jpg")
     print("done ->", bdir / "reel.mp4", f"{total:.1f}s")
 
 
