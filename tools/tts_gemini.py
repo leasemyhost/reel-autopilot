@@ -45,6 +45,12 @@ def tts(text):
                     data = json.load(r)
                 b64 = data["candidates"][0]["content"]["parts"][0]["inlineData"]["data"]
                 pcm = np.frombuffer(base64.b64decode(b64), dtype=np.int16).astype(np.float32) / 32768
+                got, want = len(pcm) / 24000, len(text.replace(" ", "")) / 16.0
+                if got < 0.6 * want:  # Gemini sometimes returns only the first part of a long script
+                    last = f"{model}: truncated audio {got:.1f}s (expected ~{want:.0f}s)"
+                    print(last, flush=True)
+                    time.sleep(4)
+                    continue
                 return pcm
             except urllib.error.HTTPError as e:
                 last = f"{model}: HTTP {e.code} {e.read()[:1500]!r}"
