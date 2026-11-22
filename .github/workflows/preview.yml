@@ -1,0 +1,26 @@
+name: preview-reel
+# Ready reel ko public media release pe daalo taaki post se pehle dekh sakein.
+on:
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: morning / noon / evening
+        required: true
+permissions:
+  contents: write
+  actions: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish preview
+        run: |
+          NAME="ready-${{ github.event.inputs.slot }}-$(TZ=Asia/Kolkata date +%F)"
+          ID=$(gh api "repos/${{ github.repository }}/actions/artifacts?name=$NAME&per_page=1" --jq '.artifacts[0].id')
+          gh api "repos/${{ github.repository }}/actions/artifacts/$ID/zip" > r.zip && mkdir -p ready && unzip -q r.zip -d ready
+          V=$(ls ready/*/reel.mp4 | head -1); D=$(dirname $V); RID=$(basename $D)
+          tools/media_host.sh "$V" "preview-$RID.mp4"
+          [ -f "$D/cover.jpg" ] && tools/media_host.sh "$D/cover.jpg" "preview-$RID-cover.jpg" || true
