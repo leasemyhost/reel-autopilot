@@ -19,6 +19,7 @@ for arg in sys.argv[1:]:
         c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "video_url": url, "caption": "test", "access_token": tok})
         print(name, "video_url ->", wait(c["id"]))
     except Exception as e: print(name, "video_url err", e)
+    continue
     try:
         c = api("POST", f"{base}/{uid}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": "test", "access_token": tok})
         api("POST", c["uri"], headers={"Authorization": f"OAuth {tok}", "file_url": url})
