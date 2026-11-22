@@ -17,7 +17,17 @@ Goal: roz 3 reels (har reel 1-2 min) (subah 9, dopahar 1, shaam 7 IST) - views a
    - "Free" claim tabhi jab official source se verified ho (pricing page, official blog). Limit/condition reel mein bolo.
    - Har fact jo reel mein jaaye, uska source verify karo. Agar pakka nahi to reel mein mat daalo.
 3. **Script** (`.claude/skills/ig-reel` ka process): 3 hooks likho, `hookscore.py` se score, best chuno.
-   **Jayant ke NIYAM (har reel mein zaroori):**
+   **VIEWER KA FAYDA (sabse pehla niyam)** - har reel aise samjhao ki dekhne wale ko lage "is reel se MERA faayda hua":
+   - Topic chunne se pehle ek line likho: *"Ye dekhne ke baad viewer ___ kar payega / ___ bachayega"* (paisa, time,
+     mehnat, naukri/kamai ka mauka). Ye line saaf na bane to topic badlo. Isko spec ke `"benefit"` field mein daalo.
+   - Hook mein viewer ka fayda ya dard: "Aapke ₹2000 bachenge", "Ghanton ka kaam 2 minute mein" - tool ka naam baad mein.
+   - "Aap/tum" bhasha: "tum ye karo", "tumhare phone mein" - "ye tool aisa hai" wali lecture nahi.
+   - Har step itna saaf ki viewer reel rok ke wahi kar sake: kaha click, kya likhna (exact prompt/button naam).
+   - Ek asli example dikhao (pehle vs baad): bina tool 1 ghanta → tool se 2 minute.
+   - Limit/sach bhi viewer ke fayde ke liye bolo ("free mein roz 3 hi milenge, isliye pehle ye karna").
+   - Follow ki wajah viewer ka fayda ho: "Roz aisi ek trick jo tumhara time/paisa bachaye - follow karo".
+   - Caption ki pehli line bhi fayda bole, feature nahi.
+
    - **Hook 3 second mein**: pehli line 8 shabd se kam, pehle 3 sec mein poori bol di jaye. Hero card t=0 se dikhe.
    - **Ek screen = ek idea**: har `cap` max 6-7 shabd, max 2 `[keyword]`. Lamba point ho to do lines mein todo.
    - **1-2 minute (60-120 sec)** - Jayant ka naya niyam: 20-32 lines, 10-14 sections, saari `hi` lines milakar

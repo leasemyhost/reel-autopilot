@@ -169,6 +169,8 @@ def main():
     bdir = Path(a.build)
     if a.cover_only:
         a.estimate = True
+    if not spec.get("benefit"):
+        print('WARNING: spec mein "benefit" nahi - "viewer ye dekh ke ___ kar payega/bachayega" likho (PLAYBOOK)')
     if a.estimate:
         bdir.mkdir(parents=True, exist_ok=True)
         B, t = [0.0], 0.0
