@@ -21,12 +21,28 @@ def main():
     video = items[0].parent / "reel.mp4"
     meta = r["meta"]
     done = ROOT / "posted" / r["id"] / "meta.json"
-    if done.exists() and json.load(open(done)).get("status") == "posted":
-        print("already posted:", r["id"])
-        return 0
-    media_id, link = publish(video, r["caption"], os.environ["IG_USER_ID"], os.environ["IG_ACCESS_TOKEN"])
-    meta.update(status="posted", media_id=media_id, permalink=link, posted_at=dt.datetime.utcnow().isoformat() + "Z")
-    print("posted:", media_id, link)
+    if done.exists():
+        meta.update(json.load(open(done)))
+    tok = os.environ["IG_ACCESS_TOKEN"]
+    # main account (@jayantkeguidess) + optional second account (@jayantkeguides), same time
+    targets = [("", os.environ["IG_USER_ID"])]
+    if os.environ.get("IG_USER_ID_2"):
+        targets.append(("_2", os.environ["IG_USER_ID_2"]))
+    failed = 0
+    for sfx, uid in targets:
+        if meta.get("permalink" + sfx):
+            print(f"already posted{sfx}:", meta["permalink" + sfx])
+            continue
+        try:
+            media_id, link = publish(video, r["caption"], uid, tok)
+            meta.update({"media_id" + sfx: media_id, "permalink" + sfx: link})
+            if not sfx:
+                meta.update(status="posted", posted_at=dt.datetime.utcnow().isoformat() + "Z")
+            print(f"posted{sfx}:", media_id, link)
+        except Exception as e:
+            failed += 1
+            meta["error" + sfx] = str(e)[:300]
+            print(f"FAILED{sfx}:", e)
     if os.environ.get("FB_PAGE_ID") and os.environ.get("FB_PAGE_TOKEN"):
         try:
             meta["fb_video_id"] = publish_facebook_reel(video, r["caption"], os.environ["FB_PAGE_ID"], os.environ["FB_PAGE_TOKEN"])
@@ -35,7 +51,7 @@ def main():
     dest = ROOT / "posted" / r["id"]
     dest.mkdir(parents=True, exist_ok=True)
     json.dump(meta, open(dest / "meta.json", "w"), indent=2, ensure_ascii=False)
-    return 0
+    return 1 if not meta.get("permalink") else 0
 
 
 if __name__ == "__main__":
