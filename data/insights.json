@@ -1,6 +1,19 @@
 {
   "account": {
-    "error": "GET https://graph.instagram.com/v22.0/ -> 400: b'{\"error\":{\"message\":\"Invalid OAuth 2.0 Access Token\",\"type\":\"IGApiException\",\"code\":190,\"error_data\":{},\"fbtrace_id\":\"AMCe4rAS6ByL7q2VBy2dsp6\"}}'"
+    "id": "17841451212571971",
+    "followers_count": 18,
+    "media_count": 10,
+    "username": "jayantkeguidess"
   },
-  "reels": []
+  "reels": [
+    {
+      "id": "2026-11-22-morning",
+      "title": "5 free AI tools",
+      "hook": "Har mahine AI ke paise mat do",
+      "topic": "5 FREE AI tools with verified free limits (Gemini, Perplexity, Claude, Bing Image Creator, TTSMaker)",
+      "posted_at": "2026-11-22T04:28:37.932018Z",
+      "permalink": "https://www.instagram.com/reel/DgB8jZbBpoG/",
+      "error": "GET https://graph.facebook.com/v22.0/18018555062987056/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
+    }
+  ]
 }
