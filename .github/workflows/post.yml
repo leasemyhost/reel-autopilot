@@ -2,9 +2,12 @@ name: post-reel
 # Post time: 09:00, 13:00, 19:00 IST. Video build-reel ne 2h pehle bana diya hota hai.
 on:
   schedule:
-    - cron: "30 3 * * *"
-    - cron: "30 7 * * *"
-    - cron: "30 13 * * *"
+    - cron: "27 3 * * *"    # 08:57 IST
+    - cron: "57 3 * * *"    # retry 09:27 IST (skips if already posted)
+    - cron: "27 7 * * *"    # 12:57 IST
+    - cron: "57 7 * * *"
+    - cron: "27 13 * * *"   # 18:57 IST
+    - cron: "57 13 * * *"
   workflow_dispatch:
     inputs:
       slot:
@@ -34,8 +37,10 @@ jobs:
           S="${{ github.event.inputs.slot }}"
           if [ -z "$S" ]; then if [ "$H" -lt 11 ]; then S=morning; elif [ "$H" -lt 16 ]; then S=noon; else S=evening; fi; fi
           echo "slot=$S" >> $GITHUB_OUTPUT
+          if [ -f "posted/$(TZ=Asia/Kolkata date +%F)-$S/meta.json" ] && grep -q '"status": "posted"' "posted/$(TZ=Asia/Kolkata date +%F)-$S/meta.json"; then echo "done=1" >> $GITHUB_OUTPUT; echo "already posted"; fi
       - name: Fetch ready reel
         id: fetch
+        if: steps.slot.outputs.done != '1'
         run: |
           NAME="ready-${{ steps.slot.outputs.slot }}-$(TZ=Asia/Kolkata date +%F)"
           ID=$(gh api "repos/${{ github.repository }}/actions/artifacts?name=$NAME&per_page=1" --jq '.artifacts[0].id // empty')
@@ -46,18 +51,18 @@ jobs:
             echo "no ready reel ($NAME) - fallback: build now"; echo "found=0" >> $GITHUB_OUTPUT
           fi
       - name: Post on time
-        if: steps.fetch.outputs.found == '1'
+        if: steps.slot.outputs.done != '1' && steps.fetch.outputs.found == '1'
         run: |
           V=$(ls ready/*/reel.mp4 | head -1)
           export PUBLIC_VIDEO_URL=$(tools/media_host.sh "$V" "$(basename $(dirname $V)).mp4")
           python3 tools/post_ready.py ready
       - name: Fallback setup
-        if: steps.fetch.outputs.found != '1'
+        if: steps.slot.outputs.done != '1' && steps.fetch.outputs.found != '1'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-          pip install -q pillow numpy fonttools faster-whisper
+          pip install -q pillow numpy fonttools faster-whisper 'av<15'
       - name: Fallback build + post
-        if: steps.fetch.outputs.found != '1'
+        if: steps.slot.outputs.done != '1' && steps.fetch.outputs.found != '1'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }} --build-only && V=$(ls ready/*/reel.mp4 | head -1) && export PUBLIC_VIDEO_URL=$(tools/media_host.sh "$V" "$(basename $(dirname $V)).mp4") && python3 tools/post_ready.py ready

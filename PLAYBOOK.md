@@ -37,6 +37,8 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
    `python3 tools/build_reel.py specs/pending/<id>.json build/<id> --estimate --preview` ->
    `build/<id>/preview/sheet.png` Read karke dekho: text kat to nahi raha, overlap nahi, captions sahi. Galti ho to spec theek karo.
 6. `data/topics_log.json` mein topic append. Commit + push (`git -c push.negotiate=true push`). `build/` commit mat karo.
+   Push ke baad video turant banwao (GitHub cron kabhi-kabhi miss hota hai):
+   `gh api -X POST repos/leasemyhost/reel-autopilot/actions/workflows/build.yml/dispatches -f ref=main -f 'inputs[slot]=<slot>'`
 7. GitHub Actions:
    - `build.yml` post se **2 ghante pehle** (07:00 / 11:00 / 17:00 IST): Sadachbia voice (Gemini) -> render -> checks -> ready artifact.
    - `post.yml` **exact time** (09:00 / 13:00 / 19:00 IST): ready reel Instagram par post -> `posted/<id>/meta.json`.

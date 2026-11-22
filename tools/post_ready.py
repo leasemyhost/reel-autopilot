@@ -20,6 +20,10 @@ def main():
     r = json.load(open(items[0]))
     video = items[0].parent / "reel.mp4"
     meta = r["meta"]
+    done = ROOT / "posted" / r["id"] / "meta.json"
+    if done.exists() and json.load(open(done)).get("status") == "posted":
+        print("already posted:", r["id"])
+        return 0
     media_id, link = publish(video, r["caption"], os.environ["IG_USER_ID"], os.environ["IG_ACCESS_TOKEN"])
     meta.update(status="posted", media_id=media_id, permalink=link, posted_at=dt.datetime.utcnow().isoformat() + "Z")
     print("posted:", media_id, link)

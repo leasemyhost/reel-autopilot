@@ -2,9 +2,12 @@ name: build-reel
 # 2 ghante pehle video ready: 07:00, 11:00, 17:00 IST
 on:
   schedule:
-    - cron: "30 1 * * *"
-    - cron: "30 5 * * *"
-    - cron: "30 11 * * *"
+    - cron: "23 1 * * *"    # 06:53 IST
+    - cron: "53 1 * * *"    # retry
+    - cron: "23 5 * * *"    # 10:53 IST
+    - cron: "53 5 * * *"
+    - cron: "23 11 * * *"   # 16:53 IST
+    - cron: "53 11 * * *"
   workflow_dispatch:
     inputs:
       slot:
@@ -22,7 +25,7 @@ jobs:
       - name: Setup
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
-          pip install -q pillow numpy fonttools faster-whisper
+          pip install -q pillow numpy fonttools faster-whisper 'av<15'
       - uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface

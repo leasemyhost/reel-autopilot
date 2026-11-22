@@ -19,7 +19,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 def pick(slot):
     specs = sorted((ROOT / "specs/pending").glob("*.json"))
     same = [s for s in specs if json.load(open(s)).get("slot") == slot]
-    return (same or specs or [None])[0]
+    return (same or [None])[0]
 
 
 def main():
