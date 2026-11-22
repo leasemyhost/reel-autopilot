@@ -47,7 +47,7 @@ def tts(text):
                 pcm = np.frombuffer(base64.b64decode(b64), dtype=np.int16).astype(np.float32) / 32768
                 return pcm
             except urllib.error.HTTPError as e:
-                last = f"{model}: HTTP {e.code} {e.read()[:300]!r}"
+                last = f"{model}: HTTP {e.code} {e.read()[:1500]!r}"
                 if e.code == 429:
                     if "PerDay" in last or "per day" in last.lower() or "quota" in last.lower() and attempt >= 1:
                         break
