@@ -17,7 +17,11 @@ def line_starts(wav_path, lines, model_size="small"):
     except Exception:
         return None
     model = WhisperModel(model_size, device="cpu", compute_type="int8")
-    segs, _ = model.transcribe(str(wav_path), language="hi", word_timestamps=True, vad_filter=False,
+    import subprocess, numpy as np  # decode with ffmpeg: PyAV in new faster-whisper/py3.14 breaks on metadata_errors
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(wav_path), "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    audio = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
+    segs, _ = model.transcribe(audio, language="hi", word_timestamps=True, vad_filter=False,
                                condition_on_previous_text=False, initial_prompt=" ".join(lines)[:400])
     words = [(w.word, w.start, w.end) for s in segs for w in (s.words or [])]
     if len(words) < len(lines):
