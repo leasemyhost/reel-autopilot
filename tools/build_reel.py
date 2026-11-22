@@ -147,9 +147,11 @@ def main():
         bdir.mkdir(parents=True, exist_ok=True)
         B, t = [0.0], 0.0
         for l in spec["lines"]:
-            t += max(1.2, len(l["hi"].replace(" ", "")) / 13.0)
+            t += max(1.2, len(l["hi"].replace(" ", "")) / 10.3)  # Sadachbia ~10.3 Devanagari chars/sec (measured)
             B.append(round(t, 2))
         json.dump(B, open(bdir / "line_times.json", "w"))
+        if t > 45:
+            print(f"WARNING: estimated {t:.0f}s > 45s - script chhota karo (Jayant ka niyam 30-45s)")
     B = json.load(open(bdir / "line_times.json"))
     assert len(B) == len(spec["lines"]) + 1, "line_times count mismatch"
     setup(spec, B)

@@ -20,7 +20,8 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
    **Jayant ke NIYAM (har reel mein zaroori):**
    - **Hook 3 second mein**: pehli line 8 shabd se kam, pehle 3 sec mein poori bol di jaye. Hero card t=0 se dikhe.
    - **Ek screen = ek idea**: har `cap` max 6-7 shabd, max 2 `[keyword]`. Lamba point ho to do lines mein todo.
-   - **30-45 second**: 12-16 lines. 45 sec se upar kabhi nahi.
+   - **30-45 second**: 11-13 lines, saari `hi` lines milakar ~440 Devanagari akshar (bina space) se kam.
+     Sadachbia ~10 akshar/sec bolti hai. `--estimate` 45s se upar WARNING de to script chhota karo.
    - **Bade, bold text**: card text chhota aur kam (har item 3-4 shabd). Choti detail card mein mat thoonso.
    - **Aakhri line hamesha** (voice mein): "ऐसे ही ट्रिक्स के लिए, जयंत के गाइड्स को फ़ॉलो करना न भूलें।"
      Ye `tools/spec_rules.py` khud jod deta hai - CTA line iske theek pehle rakho, follow ko do baar mat bulwao.
