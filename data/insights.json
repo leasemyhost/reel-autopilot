@@ -2,7 +2,7 @@
   "account": {
     "id": "17841451212571971",
     "followers_count": 18,
-    "media_count": 10,
+    "media_count": 11,
     "username": "jayantkeguidess"
   },
   "reels": [
@@ -14,6 +14,15 @@
       "posted_at": "2026-11-22T04:28:37.932018Z",
       "permalink": "https://www.instagram.com/reel/DgB8jZbBpoG/",
       "error": "GET https://graph.facebook.com/v22.0/18018555062987056/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
+    },
+    {
+      "id": "2026-11-22-noon",
+      "title": "ChatGPT audio se notes",
+      "hook": "Ghante bhar ki recording sunna band karo",
+      "topic": "ChatGPT audio file upload se transcript + notes (paid plans only, official help page) + free users ke liye camera photo jugaad",
+      "posted_at": "2026-11-22T10:31:57.433434Z",
+      "permalink": "https://www.instagram.com/reel/DgCmK5bMifd/",
+      "error": "GET https://graph.facebook.com/v22.0/18155331913470354/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
     }
   ]
 }
