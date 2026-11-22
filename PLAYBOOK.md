@@ -1,7 +1,7 @@
 # Reel Autopilot - Playbook (har scheduled run yahi follow kare)
 
 Account: **Jayant Ke Guides** - Hindi/Hinglish tech, AI aur online kamai content, Tier 2/3 India audience.
-Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhana, bina fake engagement.
+Goal: roz 3 reels (har reel 1-2 min) (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhana, bina fake engagement.
 
 ## Ek run ka kaam (ek reel)
 1. `git pull`. `data/topics_log.json` aur `data/insights.json` padho (kya chala, kya nahi).
@@ -20,8 +20,10 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
    **Jayant ke NIYAM (har reel mein zaroori):**
    - **Hook 3 second mein**: pehli line 8 shabd se kam, pehle 3 sec mein poori bol di jaye. Hero card t=0 se dikhe.
    - **Ek screen = ek idea**: har `cap` max 6-7 shabd, max 2 `[keyword]`. Lamba point ho to do lines mein todo.
-   - **30-45 second**: 11-13 lines, saari `hi` lines milakar ~440 Devanagari akshar (bina space) se kam.
-     Sadachbia ~10 akshar/sec bolti hai. `--estimate` 45s se upar WARNING de to script chhota karo.
+   - **1-2 minute (60-120 sec)** - Jayant ka naya niyam: 20-32 lines, 10-14 sections, saari `hi` lines milakar
+     ~650-1150 Devanagari akshar (bina space). Sadachbia ~10 akshar/sec bolti hai. `--estimate` WARNING de to theek karo.
+     Lambi reel mein bhi har line ek idea; har 6-8 sec mein naya card/visual aaye, warna log scroll kar denge.
+     Beech mein (~40-50%) ek "re-hook" line daalo ("par asli trick ab aati hai...") taaki log ruke rahein.
    - **Bade, bold text**: card text chhota aur kam (har item 3-4 shabd). Choti detail card mein mat thoonso.
    - **Aakhri line hamesha** (voice mein): "ऐसे ही ट्रिक्स के लिए, जयंत के गाइड्स को फ़ॉलो करना न भूलें।"
      Ye `tools/spec_rules.py` khud jod deta hai - CTA line iske theek pehle rakho, follow ko do baar mat bulwao.

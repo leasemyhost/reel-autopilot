@@ -134,6 +134,15 @@ def main():
     lines = [l["hi"] for l in spec["lines"]]
     chunks, bounds, t0 = [], [], 0.0
     groups = [tuple(sec["lines"]) for sec in spec["sections"]] if MODE == "section" else [(0, len(lines) - 1)]
+    total_chars = sum(len(l.replace(" ", "")) for l in lines)
+    if MODE != "section" and total_chars > 650:
+        # 1-2 min reels: 2 calls split at the section boundary nearest the middle (long single calls get truncated)
+        best, acc = None, 0
+        for sec in spec["sections"][:-1]:
+            acc += sum(len(lines[i].replace(" ", "")) for i in range(sec["lines"][0], sec["lines"][1] + 1))
+            if best is None or abs(acc - total_chars / 2) < abs(best[1] - total_chars / 2):
+                best = (sec["lines"][1], acc)
+        groups = [(0, best[0]), (best[0] + 1, len(lines) - 1)]
     for a, b in groups:
         text = "\n\n".join(lines[a:b + 1])
         x = trim(tts(text))

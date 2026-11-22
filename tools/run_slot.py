@@ -46,7 +46,7 @@ def main():
     dur = float(info["format"]["duration"])
     assert any(s.get("width") == 1080 and s.get("height") == 1920 for s in info["streams"]), "bad size"
     assert any(s["codec_type"] == "audio" for s in info["streams"]), "no audio"
-    assert 15 < dur < 90, f"bad duration {dur}"
+    assert 30 < dur < 150, f"bad duration {dur}"  # Jayant: 1-2 min reels
     meta = {k: spec.get(k) for k in ("title", "topic", "hook", "slot", "sources")}
     meta.update(id=rid, duration=round(dur, 1), built_at=dt.datetime.utcnow().isoformat() + "Z")
     dest = ROOT / "posted" / rid
