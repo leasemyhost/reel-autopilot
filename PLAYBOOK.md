@@ -33,8 +33,12 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
    - Income/number claims: sirf math/example ("₹10,000 x 10 = ₹1 lakh"), kabhi guarantee nahi.
      Kisi asli insaan/brand ke naam se jhoothi baat ya fake testimonial nahi.
 4. **Spec** `specs/pending/<YYYY-MM-DD>-<slot>.json` likho (format: `specs/example-ai-website.json`, `"slot"` field zaroori).
-   `"cover"` field: thumbnail ka bada text, caption syntax mein, max 6 shabd, 1-2 `[keyword]`
-   (jaise `"[ChatGPT] se [FREE] notes"`). Thumbnail khud banta hai (dark bg + hero card) aur reel ke saath lagta hai.
+   **Thumbnail (CTR)** - 3 fields:
+   - `"cover"`: 2-4 shabd, curiosity/benefit, 1 `[KEYWORD]` CAPS mein (jaise `"Recording sunna [BAND]"`, `"Ye AI [FREE] hai"`).
+     Hook line copy mat karo - thumbnail scroll rokne ke liye hai.
+   - `"cover_badge"`: chhota tag, jaise `"ChatGPT NEW TRICK"`, `"100% FREE"`, `"5 AI TOOLS"`.
+   - `"cover_sub"`: benefit ek line, max 5 shabd (`"Audio daalo → notes ready"`).
+   Thumbnail post ke waqt `posted/<id>/spec.json` se dobara banta hai.
    6-8 sections, har section 2-3 lines, alag-alag card types (engine/cards.py ki docstrings dekho):
    hero, list_scan, terminal, chat, stats, crosses, compare, steps, big_number, cta (aakhri section hamesha cta).
    Card text chhota rakho (30 chars se kam best). `caption` field mein poora Instagram caption

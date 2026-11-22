@@ -110,24 +110,47 @@ def init_worker(spec, B):
 
 
 def make_cover(spec, B, out):
-    """Reel thumbnail: dark bg + big hook text + the hero card. spec["cover"] uses caption syntax ([kw])."""
+    """CTR thumbnail. spec: cover (2-5 words, [kw] syntax), cover_badge (e.g. "NEW TRICK"), cover_sub (benefit line).
+    Safe zone: IG grid crops to 3:4 (y 240-1680), so everything important sits inside it."""
+    import numpy as np
+    from PIL import ImageDraw, ImageFilter
     text = spec.get("cover") or spec["lines"][0]["cap"]
+    badge = spec.get("cover_badge", "NEW TRICK")
+    sub = spec.get("cover_sub", "")
     a, b, fn, p = G["secs"][0]
-    t = B[b + 1] - 0.05  # hero card fully built
     img = E.draw_background(1.0)
+    # orange glow behind the card = eye magnet
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    g = np.exp(-(((xx - W / 2) ** 2) / (2 * 380 ** 2) + ((yy - 1170) ** 2) / (2 * 300 ** 2)))
+    glow = Image.fromarray((g * 150).astype(np.uint8), "L")
+    col = Image.new("RGBA", (W, H), E.ORANGE + (255,))
+    col.putalpha(glow)
+    img.alpha_composite(col)
+    # hero card, big and slightly tilted
     card = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    fn(card, t, [B[k] for k in range(a, b + 2)], None, p)
-    card = E.transform_layer(card, scale=0.82, dy=270)
-    img.alpha_composite(card)
+    fn(card, B[b + 1] - 0.05, [B[k] for k in range(a, b + 2)], None, p)
+    img.alpha_composite(E.transform_layer(card, scale=0.9, dy=230, rot=-3))
+    # badge
+    E.paste(img, E.shadowed(E.pill(badge.upper(), E.ORANGE + (255,), E.WHITE, size=44, h=86, pad=40), offset=8, blur=12),
+            W / 2, 300, rot=-4)
+    # headline: huge
     old = (E.KW_SIZE, E.TX_SIZE)
-    E.KW_SIZE, E.TX_SIZE = 118, 78
+    E.KW_SIZE, E.TX_SIZE = 150, 112
     E.kw_box.cache_clear()
     top = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    E.draw_caption(top, text, 999, 0, 1, 470)
+    E.draw_caption(top, text, 999, 0, 1, 590)
+    shadow = top.split()[3].filter(ImageFilter.GaussianBlur(14)).point(lambda v: int(v * 0.6))
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 255))
+    sh.putalpha(shadow)
+    img.alpha_composite(sh, (0, 8))
     img.alpha_composite(top)
     E.KW_SIZE, E.TX_SIZE = old
     E.kw_box.cache_clear()
-    img.convert("RGB").save(out, quality=92)
+    # benefit strip
+    if sub:
+        E.paste(img, E.shadowed(E.pill(sub, (255, 255, 255, 255), E.INK, size=46, h=96, pad=44), offset=8, blur=14),
+                W / 2, 1560)
+    img.convert("RGB").save(out, quality=93)
     return out
 
 
@@ -137,12 +160,15 @@ def main():
     ap.add_argument("build")
     ap.add_argument("--preview", action="store_true")
     ap.add_argument("--jobs", type=int, default=os.cpu_count())
+    ap.add_argument("--cover-only", help="sirf thumbnail banao is path pe (estimated timings)")
     ap.add_argument("--estimate", action="store_true", help="no voice yet: estimate line times from text length (preview only)")
     a = ap.parse_args()
     sys.path.insert(0, str(Path(__file__).parent))
     from spec_rules import ensure_outro
     spec = ensure_outro(json.load(open(a.spec)))
     bdir = Path(a.build)
+    if a.cover_only:
+        a.estimate = True
     if a.estimate:
         bdir.mkdir(parents=True, exist_ok=True)
         B, t = [0.0], 0.0
@@ -156,6 +182,10 @@ def main():
     assert len(B) == len(spec["lines"]) + 1, "line_times count mismatch"
     setup(spec, B)
     total = B[-1] + 0.9
+    if a.cover_only:
+        make_cover(spec, B, Path(a.cover_only))
+        print("cover ->", a.cover_only)
+        return
 
     if a.preview:
         pdir = bdir / "preview"

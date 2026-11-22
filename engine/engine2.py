@@ -345,7 +345,7 @@ def layout(toks, maxw=980):
 def kw_box(word):
     runs = kw_runs(word)
     tw = int(sum(_meas.textlength(s, font=f) for s, f in runs))
-    bw, bh = tw + 40, 108
+    bw, bh = tw + 40, int(KW_SIZE * 1.35)
     im = Image.new("RGBA", (bw + 16, bh + 16), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     o = 8
@@ -375,7 +375,7 @@ def draw_caption(layer, text, t, start, dur, cy, fade_out_at=None):
     toks = parse_caption(text)
     times = word_times(toks, start, dur)
     rows = layout(toks)
-    row_h = [112 if any(k for _, k, *_ in r) else 74 for r in rows]
+    row_h = [int(KW_SIZE * 1.4) if any(k for _, k, *_ in r) else int(TX_SIZE * 1.37) for r in rows]
     total_h = sum(row_h) + 6 * (len(rows) - 1)
     y = cy - total_h / 2
     alpha_all = 1.0
