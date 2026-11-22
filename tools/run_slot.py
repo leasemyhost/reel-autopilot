@@ -32,7 +32,9 @@ def main():
     if not sp:
         print("no pending spec - nothing to do")
         return 0
-    spec = json.load(open(sp))
+    from spec_rules import ensure_outro
+    spec = ensure_outro(json.load(open(sp)))
+    json.dump(spec, open(sp, "w"), ensure_ascii=False, indent=2)
     rid = sp.stem
     b = ROOT / "build" / rid
     print("== building", rid, spec.get("title"))

@@ -22,6 +22,8 @@ Goal: roz 3 reels (subah 9, dopahar 1, shaam 7 IST) - views aur followers badhan
    - **Ek screen = ek idea**: har `cap` max 6-7 shabd, max 2 `[keyword]`. Lamba point ho to do lines mein todo.
    - **30-45 second**: 12-16 lines. 45 sec se upar kabhi nahi.
    - **Bade, bold text**: card text chhota aur kam (har item 3-4 shabd). Choti detail card mein mat thoonso.
+   - **Aakhri line hamesha** (voice mein): "ऐसे ही ट्रिक्स के लिए, जयंत के गाइड्स को फ़ॉलो करना न भूलें।"
+     Ye `tools/spec_rules.py` khud jod deta hai - CTA line iske theek pehle rakho, follow ko do baar mat bulwao.
    - **Aakhir mein saaf CTA**: comment keyword, jaise `Comment mein "REEL" likho` + Follow. Agar
      `data/dm_automation.json` `"enabled": false` hai to DM/link ka vaada mat karo - bolo "agla part isi pe banega"
      ya "comment karo, sabko reply karunga" (Jayant khud reply karte hain).

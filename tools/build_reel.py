@@ -139,7 +139,9 @@ def main():
     ap.add_argument("--jobs", type=int, default=os.cpu_count())
     ap.add_argument("--estimate", action="store_true", help="no voice yet: estimate line times from text length (preview only)")
     a = ap.parse_args()
-    spec = json.load(open(a.spec))
+    sys.path.insert(0, str(Path(__file__).parent))
+    from spec_rules import ensure_outro
+    spec = ensure_outro(json.load(open(a.spec)))
     bdir = Path(a.build)
     if a.estimate:
         bdir.mkdir(parents=True, exist_ok=True)

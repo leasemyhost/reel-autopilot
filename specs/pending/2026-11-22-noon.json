@@ -1,0 +1,230 @@
+{
+  "id": "2026-11-22-noon",
+  "topic": "ChatGPT audio file upload se transcript + notes (paid plans only, official help page) + free users ke liye camera photo jugaad",
+  "title": "ChatGPT audio se notes",
+  "hook": "Ghante bhar ki recording sunna band karo",
+  "handle": "Jayant Ke Guides",
+  "slot": "noon",
+  "lines": [
+    {
+      "hi": "घंटे भर की रिकॉर्डिंग सुनना बंद करो।",
+      "cap": "Recording sunna [Band] karo"
+    },
+    {
+      "hi": "चैटजीपीटी अब ऑडियो फ़ाइल से नोट्स बनाता है।",
+      "cap": "[ChatGPT] ab audio se [Notes] banata"
+    },
+    {
+      "hi": "मीटिंग, क्लास या लंबा वॉइस नोट, बस फ़ाइल डालो।",
+      "cap": "[Meeting] ho ya class, bas file daalo"
+    },
+    {
+      "hi": "प्लस बटन दबाओ और अपनी ऑडियो फ़ाइल चुनो।",
+      "cap": "[Plus] dabao, audio file chuno"
+    },
+    {
+      "hi": "फिर लिखो, इसका ट्रांसक्रिप्ट और नोट्स बना दो।",
+      "cap": "Likho: [Transcript] aur notes do"
+    },
+    {
+      "hi": "ये मीटिंग का रीकैप या फ़ॉलो-अप ईमेल भी लिख देता है।",
+      "cap": "[Recap] ya [Email] bhi likh deta"
+    },
+    {
+      "hi": "एक फ़ाइल पाँच सौ बारह एमबी तक चल जाती है।",
+      "cap": "[512MB] tak ki file chalegi"
+    },
+    {
+      "hi": "एमपीथ्री, एमफ़ोरए, वेव, सब चलते हैं।",
+      "cap": "[MP3] M4A WAV sab chalte"
+    },
+    {
+      "hi": "पर सच सुनो। फ़्री प्लान में ये अभी नहीं है।",
+      "cap": "Par sach: [Free] mein [Nahi] hai"
+    },
+    {
+      "hi": "ऑडियो अपलोड सिर्फ़ पेड प्लान वालों के लिए है।",
+      "cap": "Audio upload sirf [Paid] plan mein"
+    },
+    {
+      "hi": "और भाषा के हिसाब से रिज़ल्ट बदल सकता है, एक बार चेक करना।",
+      "cap": "Result ek baar [Check] karna"
+    },
+    {
+      "hi": "फ़्री वाले क्या करें? कैमरा वाला तरीका।",
+      "cap": "Free wale? [Camera] wala tareeka"
+    },
+    {
+      "hi": "प्लस दबाओ, कैमरा चुनो, नोट्स की फ़ोटो खींचो, फिर सार पूछो।",
+      "cap": "Notes ki [Photo] lo, [Summary] poochho"
+    },
+    {
+      "hi": "बस ध्यान रहे, फ़्री प्लान में रोज़ सिर्फ़ तीन फ़ाइल अपलोड हैं।",
+      "cap": "Free mein roz sirf [3] uploads"
+    },
+    {
+      "hi": "काम की लगी? कमेंट में \"रील\" लिखो।",
+      "cap": "Kaam ki lagi? Comment karo [REEL]"
+    },
+    {
+      "hi": "ऐसे ही ट्रिक्स के लिए, जयंत के गाइड्स को फ़ॉलो करना न भूलें।",
+      "cap": "Aise tricks ke liye [Follow] karo"
+    }
+  ],
+  "sections": [
+    {
+      "lines": [
+        0,
+        2
+      ],
+      "card": "hero",
+      "params": {
+        "window": "chatgpt.com · audio upload",
+        "title": "Audio se Notes",
+        "subtitle": "ChatGPT ka naya feature",
+        "badge": "NEW",
+        "stat_label": "Recording sunne ka time",
+        "stat_from": 60,
+        "stat_to": 1,
+        "stat_style": "plain",
+        "stat_at": "l2",
+        "stat_chip": "minute",
+        "checklist_title": "Kis kaam ka",
+        "items": [
+          "01  Meeting",
+          "02  Class lecture",
+          "03  Voice note"
+        ],
+        "check_at": "l2+0.3",
+        "phone": {
+          "title": "AUDIO",
+          "subtitle": "TO NOTES",
+          "cta": "Upload file",
+          "line": "mp3 · m4a · wav"
+        }
+      }
+    },
+    {
+      "lines": [
+        3,
+        5
+      ],
+      "card": "steps",
+      "params": {
+        "window": "ChatGPT app",
+        "items": [
+          {
+            "title": "+ dabao, file chuno",
+            "sub": "Audio file upload",
+            "at": 0.5
+          },
+          {
+            "title": "Transcript + notes",
+            "sub": "Bas likh ke maango",
+            "at": "l1"
+          },
+          {
+            "title": "Recap ya email",
+            "sub": "Follow-up bhi ready",
+            "at": "l2"
+          }
+        ]
+      }
+    },
+    {
+      "lines": [
+        6,
+        7
+      ],
+      "card": "big_number",
+      "params": {
+        "label": "Ek audio file ki limit",
+        "from": 0,
+        "to": 512,
+        "style": "plain",
+        "sub": "MB tak - official help page",
+        "chips": [
+          "MP3",
+          "M4A",
+          "WAV",
+          "FLAC"
+        ]
+      }
+    },
+    {
+      "lines": [
+        8,
+        10
+      ],
+      "card": "compare",
+      "params": {
+        "left": {
+          "title": "Free plan",
+          "lines": [
+            "Audio upload: abhi nahi",
+            "3 file uploads / din"
+          ]
+        },
+        "right": {
+          "title": "Paid plan",
+          "lines": [
+            "Audio upload: haan",
+            "Transcript + notes"
+          ]
+        },
+        "right_at": "l1",
+        "verdict": "Result check zaroor karo"
+      }
+    },
+    {
+      "lines": [
+        11,
+        13
+      ],
+      "card": "chat",
+      "params": {
+        "label": "Free jugaad · Camera",
+        "contact": "ChatGPT",
+        "phone": {
+          "title": "CAMERA",
+          "subtitle": "JUGAAD",
+          "cta": "+ > Camera",
+          "line": "Free plan"
+        },
+        "messages": [
+          {
+            "text": "[Notes ki photo]",
+            "mine": true,
+            "at": "l1"
+          },
+          {
+            "text": "Iska summary bata do",
+            "mine": true,
+            "at": "l1+0.8"
+          },
+          {
+            "text": "Ye rahe 5 main points",
+            "at": "l2"
+          }
+        ],
+        "stamp": "3 uploads / din"
+      }
+    },
+    {
+      "lines": [
+        14,
+        15
+      ],
+      "card": "cta",
+      "params": {
+        "keyword": "REEL",
+        "name": "Jayant Ke Guides",
+        "initials": "JK",
+        "dm_text": "Comment karo REEL",
+        "dm_sub": "Har comment ka reply milega"
+      }
+    }
+  ],
+  "caption": "ChatGPT audio upload: ab recording se seedha transcript aur notes. Ye ChatGPT Hindi trick meeting aur class mein kaam aayegi.\n\nOpenAI ke official help page ke hisaab se:\n1. + dabao, audio file chuno, transcript ya notes maango\n2. Meeting recap ya follow-up email bhi ban jaata hai\n3. Ek file 512 MB tak\n4. Ye abhi sirf paid plans mein hai, Free plan mein nahi\n5. Transcript mein galti ho sakti hai, bhasha ke hisaab se result badalta hai\n\nFree plan wale: + > Camera se notes ki photo lo aur summary poochho. Free mein roz 3 file uploads ki limit hai.\n\nFeatures aur limits OpenAI badal sakta hai, use se pehle check kar lena.\n\nKaam ki lagi? Comment mein REEL likho aur roz nayi ChatGPT trick ke liye follow karo.\n\n#aitools #chatgpthindi #aitoolsforfree #chatgpt #openai",
+  "cover": "[ChatGPT] se audio ke [Notes]"
+}
