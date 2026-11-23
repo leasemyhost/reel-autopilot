@@ -1,0 +1,15 @@
+{
+  "title": "Free AI se naukri resume",
+  "topic": "ChatGPT/Claude free plan se ATS friendly resume: JD copy + apni details + exact prompt; har job ke liye naya resume; format (1 column, no photo/table, DOCX) Naukri ATS guide se; sach: AI galti, jhooth nahi, free limit",
+  "hook": "Tumhara resume 10 minute mein, free AI se",
+  "slot": "noon",
+  "sources": [
+    "https://www.naukri.com/career-advice/how-to-beat-applicant-tracking-systems",
+    "https://www.naukri.com/career-advice/ats-friendly-resume",
+    "https://claude.com/pricing"
+  ],
+  "id": "2026-11-23-noon",
+  "duration": 85.8,
+  "built_at": "2026-11-23T04:07:08.366506Z",
+  "status": "ready"
+}

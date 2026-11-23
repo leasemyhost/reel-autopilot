@@ -1,0 +1,16 @@
+Resume banwane ke paise bachao. Free AI se 10 minute mein ATS friendly resume.
+ChatGPT ya Claude ke free plan pe, ek prompt se, aaj hi job apply karo.
+
+3 step:
+1. Jis job pe apply karna hai, uska job description copy karo (Naukri, LinkedIn)
+2. Apni details ek jagah likho: naam, padhai, skills, kaam. Fresher ho to project aur internship
+3. Prompt: "Tum HR expert ho. Meri details se ek ATS friendly resume banao. Ek column, simple headings. Is job description ke keywords use karo. Jo detail maine nahi di, wo apni taraf se mat jodo."
+
+Trick: har job ke liye naya JD paste karo, naya resume lo.
+Format: photo aur table nahi, Word mein paste karke DOCX save karo.
+
+Sach: AI galti karta hai, har line khud padho. Jhoothi degree ya fake experience kabhi mat likho. Free plan mein limit hai, sab details ek message mein do.
+
+Comment mein RESUME likho, sabko reply karunga.
+
+#aitools #chatgpthindi #resumetips #atsresume #aihindi
