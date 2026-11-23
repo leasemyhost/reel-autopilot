@@ -10,3 +10,17 @@ fi
 export PUBLIC_VIDEO_URL=$(tools/media_host.sh "$V" "$ID.mp4")
 if [ -f "$D/cover.jpg" ]; then export PUBLIC_COVER_URL=$(tools/media_host.sh "$D/cover.jpg" "$ID-cover.jpg"); fi
 python3 tools/post_ready.py ready
+
+# YouTube manual upload ke liye: video + title/description 'youtube' release mein (7 din rehta hai)
+if [ -f "posted/$ID/meta.json" ] && grep -q '"permalink"' "posted/$ID/meta.json"; then
+  python3 - "$D/ready.json" > "/tmp/$ID-youtube.txt" <<'PY'
+import json, re, sys
+r = json.load(open(sys.argv[1])); cap = r["caption"]
+first = next((l.strip() for l in cap.splitlines() if l.strip()), "AI trick")
+print("TITLE:\n" + (re.sub(r"#\S+", "", first).strip()[:85] + " #Shorts") + "\n\nDESCRIPTION:\n" + cap + "\n\n#Shorts")
+PY
+  YV=$(RELEASE=youtube tools/media_host.sh "$V" "$ID.mp4") || true
+  YT=$(RELEASE=youtube tools/media_host.sh "/tmp/$ID-youtube.txt" "$ID-youtube.txt") || true
+  echo "yt_download: $YV"
+  echo "yt_text: $YT"
+fi
