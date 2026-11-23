@@ -1,0 +1,354 @@
+{
+  "id": "2026-11-23-evening",
+  "topic": "College students (18+, India) ke liye Google AI Plus 1 saal free - one.google.com/ai-student, SheerID verify, redeem 31 Dec 2026 tak; Gemini Omni, 2x Gemini limit, 400 GB; sign up pe card zaroori, 1 saal baad ~Rs 399/mahina auto renew - reminder + cancel; non-students ke liye free Gemini app",
+  "title": "Google AI Plus students ke liye free",
+  "hook": "College mein ho? ₹4000 ka AI, free",
+  "benefit": "College student viewer Google AI Plus (Gemini Omni, 2x limits, 400 GB storage) 31 Dec se pehle 1 saal free claim kar payega - ~₹4000 bachenge, aur auto-renew ka charge bhi time pe cancel kar payega",
+  "handle": "Jayant Ke Guides",
+  "slot": "evening",
+  "pillar": "free_tools",
+  "cover": "Students ke liye [FREE]",
+  "cover_badge": "GOOGLE AI PLUS",
+  "cover_sub": "1 saal, 31 Dec tak",
+  "sources": [
+    "https://blog.google/intl/en-in/products/start-the-academic-year-with-one-year-of-gemini-on-us/",
+    "https://www.businesstoday.in/technology/news/story/google-offers-free-ai-plus-and-ai-pro-to-university-students-heres-how-to-claim-it-557112-2026-09-23",
+    "https://www.digit.in/news/general/google-ai-plus-free-for-college-students-for-1-year-how-to-claim-it-and-what-it-offers.html",
+    "https://gadgets.beebom.com/news/google-offering-free-year-of-google-ai-plus-worth-college-students-india"
+  ],
+  "lines": [
+    {
+      "hi": "कॉलेज में हो? चार हज़ार का एआई, फ़्री।",
+      "cap": "College mein ho? [₹4000] ka AI free"
+    },
+    {
+      "hi": "गूगल एआई प्लस, पूरे एक साल के लिए मुफ़्त।",
+      "cap": "[Google] AI Plus, 1 saal [Free]"
+    },
+    {
+      "hi": "पर आख़िरी तारीख़ है, इकतीस दिसंबर।",
+      "cap": "Last date [31] [December]"
+    },
+    {
+      "hi": "इसमें मिलेगा क्या? सुनो।",
+      "cap": "Isme milega [Kya]"
+    },
+    {
+      "hi": "जेमिनी ओमनी, और जेमिनी में दो गुना लिमिट।",
+      "cap": "[Gemini] Omni + [2x] limit"
+    },
+    {
+      "hi": "चार सौ जीबी स्टोरेज, फ़ोटोज़, ड्राइव और जीमेल में।",
+      "cap": "[400] GB storage"
+    },
+    {
+      "hi": "और पढ़ाई के लिए नोट्स, क्विज़ और स्टडी प्लान।",
+      "cap": "Notes, study plan, [Quiz]"
+    },
+    {
+      "hi": "अब क्लेम कैसे करें, स्टेप बाय स्टेप।",
+      "cap": "Claim kaise? [Step] by step"
+    },
+    {
+      "hi": "स्टेप वन। वन डॉट गूगल डॉट कॉम, स्लैश एआई स्टूडेंट खोलो।",
+      "cap": "[Step] [1:] one.google.com/ai-student"
+    },
+    {
+      "hi": "अपने पर्सनल जीमेल से लॉगिन करो, कॉलेज वाली आईडी से नहीं।",
+      "cap": "Personal [Gmail] se login"
+    },
+    {
+      "hi": "स्टेप टू। गेट स्टूडेंट ऑफ़र पर टैप करो।",
+      "cap": "[Step] [2:] Get student offer"
+    },
+    {
+      "hi": "स्टेप थ्री। शीयरआईडी पेज पर, अपना नाम और कॉलेज भरो।",
+      "cap": "[Step] [3:] [SheerID] verify"
+    },
+    {
+      "hi": "जो डिटेल्स भरो, सही-सही भरो।",
+      "cap": "Details [Sahi] bharo"
+    },
+    {
+      "hi": "स्टेप फ़ोर। वेरिफ़ाई होते ही, एक साल फ़्री चालू।",
+      "cap": "[Step] [4:] 1 saal free chalu"
+    },
+    {
+      "hi": "पर असली बात अब आती है।",
+      "cap": "Par asli [Baat] ab aati hai"
+    },
+    {
+      "hi": "साइन अप पर कार्ड डालना पड़ेगा।",
+      "cap": "Sign up pe [Card] chahiye"
+    },
+    {
+      "hi": "साल ख़त्म होते ही, हर महीने लगभग तीन सौ निन्यानवे रुपये कटेंगे।",
+      "cap": "Phir [₹399] har mahine"
+    },
+    {
+      "hi": "इसलिए आज ही फ़ोन में रिमाइंडर लगाओ।",
+      "cap": "Aaj hi [Reminder] lagao"
+    },
+    {
+      "hi": "ज़रूरत न हो, तो साल पूरा होने से पहले कैंसल कर दो।",
+      "cap": "Pehle hi [Cancel] kar do"
+    },
+    {
+      "hi": "शर्तें भी सुनो।",
+      "cap": "[Shartein] bhi suno"
+    },
+    {
+      "hi": "अठारह साल से ऊपर, और कॉलेज या यूनिवर्सिटी के स्टूडेंट।",
+      "cap": "[18+] aur [College] student"
+    },
+    {
+      "hi": "स्टूडेंट नहीं हो? फ़्री जेमिनी ऐप तो सबके लिए है।",
+      "cap": "Student nahi? Free [Gemini] app"
+    },
+    {
+      "hi": "कॉलेज वाले दोस्त को ये रील भेजो, उसके पैसे बचेंगे।",
+      "cap": "College dost ko [Bhejo]"
+    },
+    {
+      "hi": "कोई दिक़्क़त आए? कमेंट में स्टूडेंट लिखो, सबको रिप्लाई करूँगा।",
+      "cap": "Comment karo [STUDENT]"
+    },
+    {
+      "hi": "ऐसे ही ट्रिक्स के लिए, जयंत के गाइड्स को फ़ॉलो करना न भूलें।",
+      "cap": "Aise tricks ke liye [Follow] karo"
+    }
+  ],
+  "sections": [
+    {
+      "lines": [
+        0,
+        2
+      ],
+      "card": "hero",
+      "params": {
+        "window": "one.google.com · student",
+        "title": "Google AI Plus",
+        "subtitle": "Students ke liye free",
+        "badge": "1 SAAL · ₹0",
+        "stat_label": "Bachat",
+        "stat_from": 0,
+        "stat_to": 4000,
+        "stat_style": "inr",
+        "stat_at": "l0+1.0",
+        "stat_chip": "31 Dec tak",
+        "checklist_title": "Kaun le sakta hai",
+        "items": [
+          "01  College student",
+          "02  18+ umar",
+          "03  Personal Gmail"
+        ],
+        "check_at": "l2",
+        "phone": {
+          "title": "AI PLUS",
+          "subtitle": "STUDENT",
+          "cta": "Get offer",
+          "line": "1 saal free"
+        }
+      }
+    },
+    {
+      "lines": [
+        3,
+        6
+      ],
+      "card": "steps",
+      "params": {
+        "window": "AI Plus · kya milega",
+        "items": [
+          {
+            "title": "Gemini Omni",
+            "sub": "Naya model",
+            "at": "l1"
+          },
+          {
+            "title": "2x Gemini limit",
+            "sub": "Zyada chats",
+            "at": "l1+1.8"
+          },
+          {
+            "title": "400 GB storage",
+            "sub": "Photos, Drive, Gmail",
+            "at": "l2"
+          },
+          {
+            "title": "Study tools",
+            "sub": "Notes, quiz, plan",
+            "at": "l3"
+          }
+        ]
+      }
+    },
+    {
+      "lines": [
+        7,
+        9
+      ],
+      "card": "terminal",
+      "params": {
+        "label": "Step 1 · Link kholo",
+        "window": "browser",
+        "prompts": [
+          {
+            "text": "> one.google.com/ai-student",
+            "at": "l1"
+          },
+          {
+            "text": "> Login: personal Gmail",
+            "at": "l2"
+          }
+        ],
+        "results": [
+          {
+            "text": "Student offer page ✓",
+            "at": "l2+2.0"
+          }
+        ],
+        "cards": [
+          {
+            "title": "College ID nahi",
+            "sub": "Personal account"
+          },
+          {
+            "chip": "₹0",
+            "title": "1 saal",
+            "sub": "AI Plus",
+            "green": true
+          }
+        ]
+      }
+    },
+    {
+      "lines": [
+        10,
+        13
+      ],
+      "card": "chat",
+      "params": {
+        "label": "Step 2-4 · Verify",
+        "contact": "Google One",
+        "phone": {
+          "title": "SHEERID",
+          "subtitle": "VERIFY",
+          "cta": "Continue",
+          "line": "Student check"
+        },
+        "messages": [
+          {
+            "text": "Get student offer",
+            "mine": true,
+            "at": 0.4
+          },
+          {
+            "text": "SheerID: naam + college",
+            "at": "l1"
+          },
+          {
+            "text": "Sahi details bhari ✓",
+            "mine": true,
+            "at": "l2"
+          },
+          {
+            "text": "Verified! 1 saal free",
+            "at": "l3"
+          }
+        ],
+        "stamp": "FREE ✓"
+      }
+    },
+    {
+      "lines": [
+        14,
+        16
+      ],
+      "card": "big_number",
+      "params": {
+        "label": "Asli baat",
+        "from": 0,
+        "to": 399,
+        "style": "inr",
+        "sub": "1 saal baad har mahine",
+        "chips": [
+          "Card zaroori",
+          "Auto renew",
+          "Cancel anytime"
+        ]
+      }
+    },
+    {
+      "lines": [
+        17,
+        18
+      ],
+      "card": "compare",
+      "params": {
+        "left": {
+          "title": "Bhool gaye",
+          "lines": [
+            "Saal khatam",
+            "₹399 kat gaye",
+            "Har mahine"
+          ]
+        },
+        "right": {
+          "title": "Reminder laga",
+          "lines": [
+            "11 mahine baad",
+            "Zaroorat nahi?",
+            "Cancel, ₹0"
+          ]
+        },
+        "right_at": "l1",
+        "verdict": "Aaj hi reminder"
+      }
+    },
+    {
+      "lines": [
+        19,
+        21
+      ],
+      "card": "crosses",
+      "params": {
+        "items": [
+          {
+            "title": "18 se kam",
+            "sub": "Eligible nahi"
+          },
+          {
+            "title": "School ID",
+            "sub": "Personal Gmail lo"
+          },
+          {
+            "title": "31 Dec ke baad",
+            "sub": "Offer khatam"
+          }
+        ],
+        "final": {
+          "title": "Student nahi?",
+          "sub": "Free Gemini app",
+          "bar_label": "Free",
+          "at": "l2"
+        }
+      }
+    },
+    {
+      "lines": [
+        22,
+        24
+      ],
+      "card": "cta",
+      "params": {
+        "keyword": "STUDENT",
+        "name": "Jayant Ke Guides",
+        "initials": "JK",
+        "dm_text": "Comment karo STUDENT",
+        "dm_sub": "Har comment ka reply milega"
+      }
+    }
+  ],
+  "caption": "College students, ₹4000 ka Google AI Plus 1 saal FREE. Last date 31 December 2026.\nGemini student offer: Gemini Omni, Gemini mein 2x limit, 400 GB storage aur study tools.\n\nClaim kaise karein:\n1. one.google.com/ai-student kholo, personal Gmail se login (college wali ID nahi)\n2. \"Get student offer\" pe tap karo\n3. SheerID page pe apna naam aur college sahi bharo\n4. Verify hote hi 1 saal free chalu\n\nSach: sign up pe card details deni padti hain. 1 saal baad lagbhag ₹399 har mahine auto renew hota hai, isliye phone mein reminder lagao aur zaroorat na ho to pehle cancel karo.\nShartein: 18+, college ya university student. Student nahi ho to free Gemini app sabke liye hai.\n\nCollege wale dost ko bhejo. Dikkat aaye to comment mein STUDENT likho, sabko reply karunga.\n\n#aitools #geminiai #googleaiplus #aitoolsforfree #studentoffer"
+}

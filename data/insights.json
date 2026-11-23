@@ -2,7 +2,7 @@
   "account": {
     "id": "17841451212571971",
     "followers_count": 19,
-    "media_count": 14,
+    "media_count": 15,
     "username": "jayantkeguidess"
   },
   "reels": [
@@ -32,6 +32,15 @@
       "posted_at": "2026-11-22T10:31:57.433434Z",
       "permalink": "https://www.instagram.com/reel/DgCmK5bMifd/",
       "error": "GET https://graph.facebook.com/v22.0/18155331913470354/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
+    },
+    {
+      "id": "2026-11-23-evening",
+      "title": "Google AI Plus students ke liye free",
+      "hook": "College mein ho? ₹4000 ka AI, free",
+      "topic": "College students (18+, India) ke liye Google AI Plus 1 saal free - one.google.com/ai-student, SheerID verify, redeem 31 Dec 2026 tak; Gemini Omni, 2x Gemini limit, 400 GB; sign up pe card zaroori, 1 saal baad ~Rs 399/mahina auto renew - reminder + cancel; non-students ke liye free Gemini app",
+      "posted_at": "2026-11-23T13:45:06.045734Z",
+      "permalink": "https://www.instagram.com/reel/DgFhB-Fhfhh/",
+      "error": "GET https://graph.facebook.com/v22.0/17915151573591550/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
     },
     {
       "id": "2026-11-23-morning",
