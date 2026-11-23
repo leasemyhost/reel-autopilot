@@ -1,0 +1,16 @@
+Purani family photo 1 minute mein nayi, free AI se. Studio ke paise bachao.
+Gemini app mein old photo restore, ek prompt se, phone pe hi.
+
+3 step:
+1. Purani photo ki din ki roshni mein seedhi photo lo
+2. Gemini app kholo, + dabao, photo upload karo
+3. Prompt: "Is purani photo ko restore karo, kharonch aur daag hatao. Chehra bilkul waisa hi rakho, asli rang bharo."
+
+Trick: pehle sirf kharonch hatwao, phir agle message mein rang.
+Sirf blur photo? Google Photos mein Edit > Tools > Unblur.
+
+Sach: Gemini mein photo editing 18+ ke liye hai, free plan mein roz ki limit hai, aur AI kabhi chehra badal deta hai. Asli photo hamesha sambhal ke rakho.
+
+Comment mein PHOTO likho, sabko reply karunga.
+
+#aitools #aitoolsforfree #geminiai #photorestoration #aihindi
