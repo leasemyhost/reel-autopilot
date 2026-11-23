@@ -1,0 +1,33 @@
+name: yt-test
+# YouTube connection test: uploads tests/sample.mp4 as PRIVATE short, prints channel + privacy result.
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          sys.path.insert(0, "tools")
+          import post_youtube as Y
+          tok = Y.access_token()
+          print("token ok")
+          # private test upload so nothing goes public
+          import urllib.request
+          from pathlib import Path
+          meta = {"snippet": {"title": "API test (private) - delete me", "description": "test", "categoryId": "28"},
+                  "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False}}
+          v = "tests/sample.mp4"; size = Path(v).stat().st_size
+          _, h, _ = Y._req("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
+                           json.dumps(meta).encode(), {"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8",
+                           "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size)}, "POST")
+          _, _, out = Y._req(h.get("Location") or h.get("location"), Path(v).read_bytes(), {"Content-Type": "video/mp4"}, "PUT")
+          r = json.loads(out)
+          print("uploaded:", r["id"], r["snippet"]["channelTitle"], r["status"])
+          PY

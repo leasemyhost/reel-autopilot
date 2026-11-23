@@ -43,6 +43,15 @@ def main():
             failed += 1
             meta["error" + sfx] = str(e)[:300]
             print(f"FAILED{sfx}:", e)
+    if os.environ.get("YT_REFRESH_TOKEN") and not meta.get("youtube_url"):
+        try:
+            from post_youtube import upload_short
+            vid, privacy, url = upload_short(video, r["caption"])
+            meta.update(youtube_id=vid, youtube_url=url, youtube_privacy=privacy)
+            print("posted_yt:", url, privacy)
+        except Exception as e:
+            meta["error_yt"] = str(e)[:300]
+            print("FAILED_yt:", e)
     if os.environ.get("FB_PAGE_ID") and os.environ.get("FB_PAGE_TOKEN"):
         try:
             meta["fb_video_id"] = publish_facebook_reel(video, r["caption"], os.environ["FB_PAGE_ID"], os.environ["FB_PAGE_TOKEN"])

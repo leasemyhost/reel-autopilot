@@ -26,6 +26,9 @@ jobs:
       IG_USER_ID_2: "17841408507592740"   # @jayantkeguides (purana 17.6K account) - same reel, same time
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST || 'graph.facebook.com' }}
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
       FB_PAGE_ID: ${{ vars.FB_PAGE_ID }}
       FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
       GH_TOKEN: ${{ github.token }}
@@ -38,7 +41,7 @@ jobs:
           S="${{ github.event.inputs.slot }}"
           if [ -z "$S" ]; then if [ "$H" -lt 11 ]; then S=morning; elif [ "$H" -lt 16 ]; then S=noon; else S=evening; fi; fi
           echo "slot=$S" >> $GITHUB_OUTPUT
-          if [ -f "posted/$(TZ=Asia/Kolkata date +%F)-$S/meta.json" ] && grep -q '"permalink_2"' "posted/$(TZ=Asia/Kolkata date +%F)-$S/meta.json"; then echo "done=1" >> $GITHUB_OUTPUT; echo "already posted"; fi
+          if [ -f "posted/$(TZ=Asia/Kolkata date +%F)-$S/meta.json" ] && grep -q '"permalink_2"' "posted/$(TZ=Asia/Kolkata date +%F)-$S/meta.json" && { [ -z "$YT_REFRESH_TOKEN" ] || grep -q '"youtube_url"' "posted/$(TZ=Asia/Kolkata date +%F)-$S/meta.json"; }; then echo "done=1" >> $GITHUB_OUTPUT; echo "already posted"; fi
       - name: Fetch ready reel
         id: fetch
         if: steps.slot.outputs.done != '1'
