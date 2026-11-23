@@ -65,6 +65,14 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/run_slot.py --slot ${{ steps.slot.outputs.slot }} --build-only && tools/publish_ready.sh
+      - name: Save built reel (fallback path) for YouTube/preview
+        if: steps.fetch.outputs.found != '1' && steps.slot.outputs.done != '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ready-${{ steps.slot.outputs.slot }}-built-at-post
+          path: ready/
+          retention-days: 3
+          if-no-files-found: ignore
       - name: Remove temp media
         if: always()
         run: for a in $(gh release view media -R ${{ github.repository }} --json assets --jq '.assets[].name' 2>/dev/null); do gh release delete-asset media "$a" -R ${{ github.repository }} -y; done || true
