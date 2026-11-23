@@ -2,7 +2,7 @@
   "account": {
     "id": "17841451212571971",
     "followers_count": 19,
-    "media_count": 13,
+    "media_count": 14,
     "username": "jayantkeguidess"
   },
   "reels": [
@@ -41,6 +41,15 @@
       "posted_at": "2026-11-23T03:35:04.473070Z",
       "permalink": "https://www.instagram.com/reel/DgEbMahBNkp/",
       "error": "GET https://graph.facebook.com/v22.0/17969262584982153/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
+    },
+    {
+      "id": "2026-11-23-noon",
+      "title": "Free AI se naukri resume",
+      "hook": "Tumhara resume 10 minute mein, free AI se",
+      "topic": "ChatGPT/Claude free plan se ATS friendly resume: JD copy + apni details + exact prompt; har job ke liye naya resume; format (1 column, no photo/table, DOCX) Naukri ATS guide se; sach: AI galti, jhooth nahi, free limit",
+      "posted_at": "2026-11-23T07:28:03.092389Z",
+      "permalink": "https://www.instagram.com/reel/DgE15Lltjru/",
+      "error": "GET https://graph.facebook.com/v22.0/18119224031118915/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
     }
   ]
 }
