@@ -1,0 +1,415 @@
+{
+ "id": "2026-11-23-noon",
+ "topic": "ChatGPT/Claude free plan se ATS friendly resume: JD copy + apni details + exact prompt; har job ke liye naya resume; format (1 column, no photo/table, DOCX) Naukri ATS guide se; sach: AI galti, jhooth nahi, free limit",
+ "title": "Free AI se naukri resume",
+ "hook": "Tumhara resume 10 minute mein, free AI se",
+ "benefit": "Viewer ChatGPT ya Claude ke free plan pe ek prompt se apna ATS friendly resume 10 minute mein bana ke usi din job apply kar payega - resume banwane ke paise bachenge",
+ "handle": "Jayant Ke Guides",
+ "slot": "noon",
+ "pillar": "chatgpt_claude_tricks",
+ "cover": "Resume [FREE] mein",
+ "cover_badge": "CHATGPT PROMPT",
+ "cover_sub": "10 minute, job ready",
+ "sources": [
+  "https://www.naukri.com/career-advice/how-to-beat-applicant-tracking-systems",
+  "https://www.naukri.com/career-advice/ats-friendly-resume",
+  "https://claude.com/pricing"
+ ],
+ "lines": [
+  {
+   "hi": "तुम्हारा रिज़्यूमे, दस मिनट में, फ़्री एआई से।",
+   "cap": "Tumhara [Resume] 10 minute mein"
+  },
+  {
+   "hi": "बनवाने के पैसे नहीं, बस एक प्रॉम्प्ट।",
+   "cap": "Paise nahi, bas ek [Prompt]"
+  },
+  {
+   "hi": "चैटजीपीटी या क्लॉड, फ़्री प्लान ही काफ़ी है।",
+   "cap": "[ChatGPT] ya [Claude] free plan"
+  },
+  {
+   "hi": "पहले समझो, रिज़्यूमे रिजेक्ट क्यों होता है।",
+   "cap": "Resume [Reject] kyun hota hai"
+  },
+  {
+   "hi": "बड़ी कंपनियाँ पहले एटीएस सॉफ़्टवेयर से रिज़्यूमे स्कैन करती हैं।",
+   "cap": "Pehle [ATS] software scan karta hai"
+  },
+  {
+   "hi": "जॉब के कीवर्ड्स नहीं मिले, तो रिज़्यूमे इंसान तक पहुँचता ही नहीं।",
+   "cap": "[Keywords] nahi, to [Reject]"
+  },
+  {
+   "hi": "स्टेप वन। जिस जॉब पे अप्लाई करना है, उसका डिस्क्रिप्शन कॉपी करो।",
+   "cap": "[Step] [1:] Job description copy"
+  },
+  {
+   "hi": "नौकरी डॉट कॉम हो या लिंक्डइन, पूरा टेक्स्ट कॉपी।",
+   "cap": "[Naukri] ya [LinkedIn] se"
+  },
+  {
+   "hi": "स्टेप टू। अपनी डिटेल्स एक जगह लिखो।",
+   "cap": "[Step] [2:] Apni [Details] likho"
+  },
+  {
+   "hi": "नाम, फ़ोन, पढ़ाई, स्किल्स, और जहाँ काम किया।",
+   "cap": "Naam, padhai, kaam, [Skills]"
+  },
+  {
+   "hi": "कोई अनुभव नहीं? कॉलेज प्रोजेक्ट और इंटर्नशिप लिखो।",
+   "cap": "Fresher? [Project] aur [Internship]"
+  },
+  {
+   "hi": "स्टेप थ्री। अब ये प्रॉम्प्ट पेस्ट करो।",
+   "cap": "[Step] [3:] Ye [Prompt] paste karo"
+  },
+  {
+   "hi": "तुम एचआर एक्सपर्ट हो, मेरा एटीएस फ़्रेंडली रिज़्यूमे बनाओ।",
+   "cap": "HR expert bano, [ATS] resume"
+  },
+  {
+   "hi": "जॉब डिस्क्रिप्शन के कीवर्ड्स इस्तेमाल करो।",
+   "cap": "JD ke [Keywords] use karo"
+  },
+  {
+   "hi": "जो डिटेल मैंने नहीं दी, वो अपनी तरफ़ से मत जोड़ो।",
+   "cap": "Jo nahi diya, wo [Mat] [Jodo]"
+  },
+  {
+   "hi": "पर असली ट्रिक अब आती है।",
+   "cap": "Par asli [Trick] ab aati hai"
+  },
+  {
+   "hi": "हर जॉब के लिए नया रिज़्यूमे बनवाओ।",
+   "cap": "Har job ka [Naya] resume"
+  },
+  {
+   "hi": "बस नया जॉब डिस्क्रिप्शन पेस्ट करो, बाकी डिटेल्स वही।",
+   "cap": "Bas naya [JD] paste karo"
+  },
+  {
+   "hi": "अब फ़ॉर्मेट भी सही रखो।",
+   "cap": "Ab [Format] bhi sahi rakho"
+  },
+  {
+   "hi": "एक कॉलम, सिंपल हेडिंग, कोई फ़ोटो या टेबल नहीं।",
+   "cap": "Ek column, no [Photo] no [Table]"
+  },
+  {
+   "hi": "वर्ड में पेस्ट करो, और डॉक्स फ़ाइल में सेव करो।",
+   "cap": "[Word] mein paste, [DOCX] save"
+  },
+  {
+   "hi": "अब सच भी सुनो।",
+   "cap": "Ab [Sach] bhi suno"
+  },
+  {
+   "hi": "एआई ग़लती भी करता है, हर लाइन ख़ुद पढ़ो।",
+   "cap": "AI galti karta hai, [Har] line padho"
+  },
+  {
+   "hi": "झूठी डिग्री या फ़र्ज़ी अनुभव कभी मत लिखो।",
+   "cap": "Jhoothi degree [Kabhi] nahi"
+  },
+  {
+   "hi": "फ़्री प्लान में लिमिट है, इसलिए सारी डिटेल्स एक ही मैसेज में दो।",
+   "cap": "Free plan mein [Limit] hai"
+  },
+  {
+   "hi": "आज ही बनाओ, और आज ही अप्लाई करो।",
+   "cap": "[Aaj] banao, aaj [Apply]"
+  },
+  {
+   "hi": "प्रॉम्प्ट चाहिए? कमेंट में रिज़्यूमे लिखो, सबको रिप्लाई करूँगा।",
+   "cap": "Comment karo [RESUME] sabko reply"
+  }
+ ],
+ "sections": [
+  {
+   "lines": [
+    0,
+    2
+   ],
+   "card": "hero",
+   "params": {
+    "window": "chatgpt · resume",
+    "title": "Naukri Resume",
+    "subtitle": "Free AI se, 10 min",
+    "badge": "₹0 · 1 PROMPT",
+    "stat_label": "Resume ka kharcha",
+    "stat_from": 0,
+    "stat_to": 0,
+    "stat_style": "inr",
+    "stat_at": "l1",
+    "stat_chip": "Free plan",
+    "checklist_title": "Bas ye chahiye",
+    "items": [
+     "01  Job description",
+     "02  Apni details",
+     "03  Ek prompt"
+    ],
+    "check_at": "l2+0.2",
+    "phone": {
+     "title": "RESUME",
+     "subtitle": "ATS READY",
+     "cta": "Apply now",
+     "line": "Free · 10 minute"
+    }
+   }
+  },
+  {
+   "lines": [
+    3,
+    5
+   ],
+   "card": "list_scan",
+   "params": {
+    "window": "ATS · resume scan",
+    "heading": "ATS scan · 5 resume",
+    "counter_fmt": "{n}/5 reject",
+    "items": [
+     {
+      "name": "Rahul_CV.pdf",
+      "from": "Scan",
+      "to": "Reject",
+      "flip_at": "l2+0.4"
+     },
+     {
+      "name": "Priya_Canva.pdf",
+      "from": "Scan",
+      "to": "Reject",
+      "flip_at": "l2+0.7"
+     },
+     {
+      "name": "Amit_Photo.pdf",
+      "from": "Scan",
+      "to": "Reject",
+      "flip_at": "l2+1.0"
+     },
+     {
+      "name": "Neha_Table.docx",
+      "from": "Scan",
+      "to": "Reject",
+      "flip_at": "l2+1.3"
+     },
+     {
+      "name": "Sunil_2col.pdf",
+      "from": "Scan",
+      "to": "Reject",
+      "flip_at": "l2+1.6"
+     }
+    ],
+    "search": {
+     "text": "keywords match?",
+     "at": "l1",
+     "tag": "Nahi mile"
+    }
+   }
+  },
+  {
+   "lines": [
+    6,
+    7
+   ],
+   "card": "steps",
+   "params": {
+    "window": "step 1 · job description",
+    "items": [
+     {
+      "title": "Job kholo",
+      "sub": "Naukri / LinkedIn",
+      "at": 0.5
+     },
+     {
+      "title": "Description copy",
+      "sub": "Poora text",
+      "at": "l0+2.4"
+     },
+     {
+      "title": "Keywords isi mein",
+      "sub": "Skills, tools",
+      "at": "l1"
+     }
+    ]
+   }
+  },
+  {
+   "lines": [
+    8,
+    10
+   ],
+   "card": "terminal",
+   "params": {
+    "label": "Step 2 · Details",
+    "window": "notes · meri details",
+    "prompts": [
+     {
+      "text": "> Naam, phone, email",
+      "at": "l1"
+     },
+     {
+      "text": "> Padhai + skills",
+      "at": "l1+1.2"
+     },
+     {
+      "text": "> Fresher: project, internship",
+      "at": "l2"
+     }
+    ],
+    "results": [
+     {
+      "text": "Details ready",
+      "at": "l2+2.0"
+     }
+    ],
+    "cards": [
+     {
+      "title": "Sirf sach",
+      "sub": "Jo kiya wahi"
+     },
+     {
+      "chip": "₹0",
+      "title": "Notes app",
+      "sub": "Ek jagah likho",
+      "green": true
+     }
+    ]
+   }
+  },
+  {
+   "lines": [
+    11,
+    14
+   ],
+   "card": "chat",
+   "params": {
+    "label": "Step 3 · Prompt",
+    "contact": "ChatGPT / Claude",
+    "phone": {
+     "title": "PROMPT",
+     "subtitle": "COPY KARO",
+     "cta": "Send",
+     "line": "Free plan"
+    },
+    "messages": [
+     {
+      "text": "Tum HR expert ho",
+      "mine": true,
+      "at": "l1"
+     },
+     {
+      "text": "ATS friendly resume banao",
+      "mine": true,
+      "at": "l1+1.6"
+     },
+     {
+      "text": "JD ke keywords use karo",
+      "mine": true,
+      "at": "l2"
+     },
+     {
+      "text": "Jo nahi diya, mat jodo",
+      "mine": true,
+      "at": "l3"
+     },
+     {
+      "text": "Resume ready ✓",
+      "at": "l3+2.2"
+     }
+    ],
+    "stamp": "₹0 ✓"
+   }
+  },
+  {
+   "lines": [
+    15,
+    17
+   ],
+   "card": "big_number",
+   "params": {
+    "label": "Asli trick",
+    "from": 0,
+    "to": 1,
+    "style": "plain",
+    "sub": "1 job = 1 naya resume",
+    "chips": [
+     "Naya JD paste",
+     "Details wahi",
+     "Keywords match"
+    ]
+   }
+  },
+  {
+   "lines": [
+    18,
+    20
+   ],
+   "card": "compare",
+   "params": {
+    "left": {
+     "title": "Fancy resume",
+     "lines": [
+      "Photo, table",
+      "2 column design",
+      "Canva image PDF"
+     ]
+    },
+    "right": {
+     "title": "ATS resume",
+     "lines": [
+      "Ek column",
+      "Simple headings",
+      "DOCX file"
+     ]
+    },
+    "right_at": "l1",
+    "verdict": "Machine padh payegi"
+   }
+  },
+  {
+   "lines": [
+    21,
+    24
+   ],
+   "card": "crosses",
+   "params": {
+    "items": [
+     {
+      "title": "Andha bharosa",
+      "sub": "Har line padho"
+     },
+     {
+      "title": "Jhoothi degree",
+      "sub": "Kabhi nahi"
+     },
+     {
+      "title": "Unlimited",
+      "sub": "Free mein limit"
+     }
+    ],
+    "final": {
+     "title": "Sach wala resume",
+     "sub": "Ek message, sab details",
+     "bar_label": "Sach",
+     "at": "l3"
+    }
+   }
+  },
+  {
+   "lines": [
+    25,
+    26
+   ],
+   "card": "cta",
+   "params": {
+    "keyword": "RESUME",
+    "name": "Jayant Ke Guides",
+    "initials": "JK",
+    "dm_text": "Comment karo RESUME",
+    "dm_sub": "Har comment ka reply milega"
+   }
+  }
+ ],
+ "caption": "Resume banwane ke paise bachao. Free AI se 10 minute mein ATS friendly resume.\nChatGPT ya Claude ke free plan pe, ek prompt se, aaj hi job apply karo.\n\n3 step:\n1. Jis job pe apply karna hai, uska job description copy karo (Naukri, LinkedIn)\n2. Apni details ek jagah likho: naam, padhai, skills, kaam. Fresher ho to project aur internship\n3. Prompt: \"Tum HR expert ho. Meri details se ek ATS friendly resume banao. Ek column, simple headings. Is job description ke keywords use karo. Jo detail maine nahi di, wo apni taraf se mat jodo.\"\n\nTrick: har job ke liye naya JD paste karo, naya resume lo.\nFormat: photo aur table nahi, Word mein paste karke DOCX save karo.\n\nSach: AI galti karta hai, har line khud padho. Jhoothi degree ya fake experience kabhi mat likho. Free plan mein limit hai, sab details ek message mein do.\n\nComment mein RESUME likho, sabko reply karunga.\n\n#aitools #chatgpthindi #resumetips #atsresume #aihindi"
+}
