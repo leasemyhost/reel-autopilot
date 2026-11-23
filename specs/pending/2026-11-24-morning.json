@@ -1,0 +1,353 @@
+{
+  "id": "2026-11-24-morning",
+  "topic": "Gemini Tasks (agent mode, pehle Spark) 17 Nov 2026 se India mein free: Task toggle, inbox safai example, scheduled task (Monday 9am recap / news digest); shartein 18+, personal account, max 15 ek saath, kharidari/form se pehle confirm, galti, password mat likho, rollout",
+  "title": "Gemini Task ab free",
+  "hook": "Tumhara kaam ab Gemini khud karega. Free mein",
+  "benefit": "Viewer Gemini app mein Task mode on karke inbox safai, har hafte ka recap ya roz ka news digest jaise kaam free mein Gemini se background mein karwa payega - roz ka time bachega",
+  "handle": "Jayant Ke Guides",
+  "slot": "morning",
+  "pillar": "free_tools",
+  "cover": "Gemini Task [FREE]",
+  "cover_badge": "GEMINI NEW",
+  "cover_sub": "Kaam batao, AI karega",
+  "sources": [
+    "https://support.google.com/gemini/answer/17094507",
+    "https://gemini.google/release-notes/",
+    "https://gemini.google/overview/productivity/",
+    "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+  ],
+  "lines": [
+    {
+      "hi": "तुम्हारा काम अब जेमिनाई ख़ुद करेगा। फ़्री में।",
+      "cap": "Tumhara kaam ab [Gemini] karega"
+    },
+    {
+      "hi": "गूगल ने जेमिनाई का टास्क फ़ीचर इंडिया में फ़्री कर दिया है।",
+      "cap": "[Task] feature India mein [Free]"
+    },
+    {
+      "hi": "पहले ये सिर्फ़ पैसे वाले प्लान में था।",
+      "cap": "Pehle sirf [Paid] plan mein"
+    },
+    {
+      "hi": "चैट बस जवाब देता है, टास्क काम पूरा करता है।",
+      "cap": "Chat jawab deta, [Task] kaam karta"
+    },
+    {
+      "hi": "तुम काम बताओ, ये पीछे चलता रहेगा।",
+      "cap": "Kaam batao, [Background] mein chalega"
+    },
+    {
+      "hi": "काम पूरा होते ही, नोटिफ़िकेशन आ जाएगा।",
+      "cap": "Kaam pura, [Notification] aayega"
+    },
+    {
+      "hi": "स्टेप वन। जेमिनाई ऐप अपडेट करो, या जेमिनाई डॉट गूगल खोलो।",
+      "cap": "[Step] [1:] Gemini app update"
+    },
+    {
+      "hi": "स्टेप टू। टेक्स्ट बॉक्स के ऊपर, टास्क पर टैप करो।",
+      "cap": "[Step] [2:] Upar [Task] tap karo"
+    },
+    {
+      "hi": "स्टेप थ्री। अपना काम लिखो, और सबमिट करो।",
+      "cap": "[Step] [3:] Kaam likho, [Submit]"
+    },
+    {
+      "hi": "मेरा पहला टास्क, इनबॉक्स की सफ़ाई।",
+      "cap": "Pehla task: [Inbox] safai"
+    },
+    {
+      "hi": "लिखो, मेरे न्यूज़लेटर्स का सार दो, और फ़ालतू मेल से अनसब्सक्राइब करो।",
+      "cap": "Newsletter [Summary] + [Unsubscribe]"
+    },
+    {
+      "hi": "जेमिनाई काम पूरा करके, तुम्हें बता देगा।",
+      "cap": "Kaam karke [Gemini] batayega"
+    },
+    {
+      "hi": "पर असली ट्रिक अब आती है।",
+      "cap": "Par asli [Trick] ab aati hai"
+    },
+    {
+      "hi": "टास्क को टाइम भी दे सकते हो।",
+      "cap": "Task ko [Time] bhi do"
+    },
+    {
+      "hi": "जैसे, हर सोमवार सुबह नौ बजे, मेरा इनबॉक्स देखो, और हफ़्ते का सार दो।",
+      "cap": "Har [Monday] 9 baje [Recap]"
+    },
+    {
+      "hi": "या रोज़ सुबह, अपनी पसंद की न्यूज़ का डाइजेस्ट।",
+      "cap": "Roz subah [News] digest"
+    },
+    {
+      "hi": "अब शर्तें भी सुनो।",
+      "cap": "Ab [Shartein] bhi suno"
+    },
+    {
+      "hi": "उम्र अठारह साल से ऊपर, और पर्सनल गूगल अकाउंट चाहिए।",
+      "cap": "[18+] aur personal [Account]"
+    },
+    {
+      "hi": "स्कूल या ऑफ़िस वाले अकाउंट पर ये नहीं चलेगा।",
+      "cap": "School, office account [Nahi]"
+    },
+    {
+      "hi": "एक साथ ज़्यादा से ज़्यादा पंद्रह टास्क चल सकते हैं।",
+      "cap": "Ek saath max [15] tasks"
+    },
+    {
+      "hi": "ख़रीदारी, पैसे या फ़ॉर्म वाले काम से पहले, ये तुमसे पूछेगा।",
+      "cap": "Kharidari se pehle [Poochega]"
+    },
+    {
+      "hi": "एआई ग़लती कर सकता है, नतीजा ख़ुद चेक करो।",
+      "cap": "AI [Galti] kar sakta hai"
+    },
+    {
+      "hi": "पासवर्ड या कार्ड नंबर, टास्क में कभी मत लिखो।",
+      "cap": "[Password] kabhi mat likho"
+    },
+    {
+      "hi": "टास्क बटन नहीं दिखा? रोलआउट चल रहा है, ऐप अपडेट करते रहो।",
+      "cap": "Button nahi dikha? [Update] karo"
+    },
+    {
+      "hi": "तुम पहला टास्क क्या दोगे? कमेंट में टास्क लिखो, सबको रिप्लाई करूँगा।",
+      "cap": "Comment karo [TASK] sabko reply"
+    }
+  ],
+  "sections": [
+    {
+      "lines": [
+        0,
+        2
+      ],
+      "card": "hero",
+      "params": {
+        "window": "gemini · task",
+        "title": "Gemini Task",
+        "subtitle": "Ab India mein free",
+        "badge": "₹0 · NEW",
+        "stat_label": "Task ka kharcha",
+        "stat_from": 0,
+        "stat_to": 0,
+        "stat_style": "inr",
+        "stat_at": "l1",
+        "stat_chip": "Free plan",
+        "checklist_title": "Pehle vs ab",
+        "items": [
+          "01  Pehle: Paid plan",
+          "02  Ab: Free",
+          "03  India mein"
+        ],
+        "check_at": "l2+0.2",
+        "phone": {
+          "title": "TASK",
+          "subtitle": "FREE INDIA",
+          "cta": "Try now",
+          "line": "Gemini app"
+        }
+      }
+    },
+    {
+      "lines": [
+        3,
+        5
+      ],
+      "card": "compare",
+      "params": {
+        "left": {
+          "title": "Chat",
+          "lines": [
+            "Sirf jawab",
+            "Tum khud karo",
+            "Wait karo"
+          ]
+        },
+        "right": {
+          "title": "Task",
+          "lines": [
+            "Kaam pura",
+            "Background mein",
+            "Notification"
+          ]
+        },
+        "right_at": "l1",
+        "verdict": "Task kaam karta hai"
+      }
+    },
+    {
+      "lines": [
+        6,
+        8
+      ],
+      "card": "steps",
+      "params": {
+        "window": "gemini · task kaise",
+        "items": [
+          {
+            "title": "App update",
+            "sub": "ya gemini.google",
+            "at": 0.5
+          },
+          {
+            "title": "Task tap karo",
+            "sub": "Text box ke upar",
+            "at": "l1"
+          },
+          {
+            "title": "Kaam likho",
+            "sub": "Phir Submit",
+            "at": "l2"
+          }
+        ]
+      }
+    },
+    {
+      "lines": [
+        9,
+        11
+      ],
+      "card": "chat",
+      "params": {
+        "label": "Pehla task",
+        "contact": "Gemini · Task",
+        "phone": {
+          "title": "TASK",
+          "subtitle": "INBOX SAFAI",
+          "cta": "Submit",
+          "line": "Free"
+        },
+        "messages": [
+          {
+            "text": "Newsletters ka saar do",
+            "mine": true,
+            "at": "l1"
+          },
+          {
+            "text": "Faltu mail unsubscribe",
+            "mine": true,
+            "at": "l1+2.0"
+          },
+          {
+            "text": "Task chal raha hai...",
+            "at": "l2"
+          },
+          {
+            "text": "Ho gaya!",
+            "at": "l2+1.6"
+          }
+        ],
+        "stamp": "₹0 ✓"
+      }
+    },
+    {
+      "lines": [
+        12,
+        15
+      ],
+      "card": "terminal",
+      "params": {
+        "label": "Asli trick · Schedule",
+        "window": "gemini · scheduled task",
+        "prompts": [
+          {
+            "text": "> Har Monday 9 baje",
+            "at": "l2"
+          },
+          {
+            "text": "> Inbox ka recap do",
+            "at": "l2+2.0"
+          },
+          {
+            "text": "> Roz subah news digest",
+            "at": "l3"
+          }
+        ],
+        "results": [
+          {
+            "text": "Schedule set",
+            "at": "l3+1.6"
+          }
+        ],
+        "cards": [
+          {
+            "title": "Khud chalega",
+            "sub": "Tum bhool jao"
+          },
+          {
+            "chip": "₹0",
+            "title": "Free",
+            "sub": "India mein",
+            "green": true
+          }
+        ]
+      }
+    },
+    {
+      "lines": [
+        16,
+        19
+      ],
+      "card": "big_number",
+      "params": {
+        "label": "Shartein",
+        "from": 0,
+        "to": 15,
+        "style": "plain",
+        "sub": "Ek saath max tasks",
+        "chips": [
+          "18+ umar",
+          "Personal ID",
+          "Office ID nahi"
+        ]
+      }
+    },
+    {
+      "lines": [
+        20,
+        22
+      ],
+      "card": "crosses",
+      "params": {
+        "items": [
+          {
+            "title": "Bina pooche kharidari",
+            "sub": "Pehle poochega"
+          },
+          {
+            "title": "Andha bharosa",
+            "sub": "Result check karo"
+          },
+          {
+            "title": "Password likhna",
+            "sub": "Kabhi nahi"
+          }
+        ],
+        "final": {
+          "title": "Smart use",
+          "sub": "Kaam AI, check tum",
+          "bar_label": "Safe",
+          "at": "l2"
+        }
+      }
+    },
+    {
+      "lines": [
+        23,
+        24
+      ],
+      "card": "cta",
+      "params": {
+        "keyword": "TASK",
+        "name": "Jayant Ke Guides",
+        "initials": "JK",
+        "dm_text": "Comment karo TASK",
+        "dm_sub": "Har comment ka reply milega"
+      }
+    }
+  ],
+  "caption": "Roz ke chhote kaam ab Gemini khud karega, free mein. Gemini Tasks India mein free ho gaya hai.\nGemini app mein Chat nahi, Task chuno. Kaam batao, wo background mein karke notification dega.\n\nKaise:\n1. Gemini app update karo ya gemini.google.com kholo\n2. Text box ke upar Task pe tap karo\n3. Kaam likho aur Submit\n\nPehla task try karo: \"Mere newsletters ka saar do aur faltu mail se unsubscribe karo\"\nTrick: time do, jaise \"Har Monday subah 9 baje inbox ka recap do\"\n\nShartein: 18+ umar, personal Google account (school/office account pe nahi), ek saath max 15 tasks. Kharidari, payment ya form se pehle Gemini tumse poochega. AI galti kar sakta hai, result khud check karo. Password ya card number task mein mat likho. Rollout chal raha hai, button na dikhe to app update karte raho.\n\nComment mein TASK likho, sabko reply karunga.\n\n#aitools #geminiai #aitoolsforfree #googlegemini #aihindi"
+}

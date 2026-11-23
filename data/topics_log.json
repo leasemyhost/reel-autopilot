@@ -45,5 +45,12 @@
     "topic": "College students (18+) ke liye Google AI Plus 1 saal free - one.google.com/ai-student, SheerID, 31 Dec 2026 deadline; card zaroori, 1 saal baad ~Rs 399/mahina auto renew - reminder + cancel; non-student ke liye free Gemini app",
     "pillar": "free_tools",
     "hook": "College mein ho? Rs 4000 ka AI, free"
+  },
+  {
+    "date": "2026-11-24",
+    "slot": "morning",
+    "topic": "Gemini Tasks (agent mode) 17 Nov 2026 se India mein free - Task toggle, inbox safai example, scheduled task; shartein 18+, personal account, max 15 ek saath, confirm before kharidari, galti, password mat likho",
+    "pillar": "free_tools",
+    "hook": "Tumhara kaam ab Gemini khud karega. Free mein"
   }
 ]
