@@ -1,0 +1,347 @@
+{
+  "id": "2026-11-24-noon",
+  "topic": "ChatGPT Live Dictation (18 Nov 2026) sabhi plans mein, free bhi: bolte-bolte text live aata hai, 10 minute recording limit hati; mic icon -> bolo -> bhejne se pehle edit; waveform tap se text chhupao/dikhao; lamba prompt bolke do; sach: AI galat sun sakta, audio chat history ke saath save, chat delete par aam taur pe 30 din, password/bank detail mat bolo, rollout",
+  "title": "ChatGPT bolke likho",
+  "hook": "Typing chhodo. Tum bolo, ChatGPT likhega",
+  "benefit": "Viewer ChatGPT (free plan bhi) mein mic icon dabakar lamba prompt, resume detail ya email bina typing bolkar likhwa payega aur bhejne se pehle edit kar payega - typing ka time aur mehnat bachegi",
+  "handle": "Jayant Ke Guides",
+  "slot": "noon",
+  "pillar": "chatgpt_claude_tricks",
+  "cover": "Bolo, ChatGPT [LIKHEGA]",
+  "cover_badge": "CHATGPT NEW TRICK",
+  "cover_sub": "Typing ki chhutti, free",
+  "sources": [
+    "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "https://help.openai.com/en/articles/12168547-voice-dictation-faq"
+  ],
+  "lines": [
+    {
+      "hi": "टाइपिंग छोड़ो। तुम बोलो, चैटजीपीटी लिखेगा।",
+      "cap": "Typing chhodo, [ChatGPT] likhega"
+    },
+    {
+      "hi": "चैटजीपीटी में लाइव डिक्टेशन आ गया है, सभी प्लान में।",
+      "cap": "[Live] Dictation, sab [Plans] mein"
+    },
+    {
+      "hi": "मतलब फ़्री वालों के लिए भी।",
+      "cap": "Matlab [Free] wale bhi"
+    },
+    {
+      "hi": "पहले बोलने के बाद, पूरा टेक्स्ट आने का इंतज़ार करना पड़ता था।",
+      "cap": "Pehle text ka [Wait] karo"
+    },
+    {
+      "hi": "अब तुम बोलते जाओ, शब्द साथ-साथ लिखे जाते हैं।",
+      "cap": "Ab bolte bolte [Text] aata"
+    },
+    {
+      "hi": "और दस मिनट वाली रिकॉर्डिंग लिमिट भी हट गई है।",
+      "cap": "[10] minute limit bhi hati"
+    },
+    {
+      "hi": "स्टेप वन। चैटजीपीटी ऐप अपडेट करो, या वेबसाइट खोलो।",
+      "cap": "[Step] [1:] App update karo"
+    },
+    {
+      "hi": "स्टेप टू। मैसेज बॉक्स में, माइक वाले आइकन पर टैप करो।",
+      "cap": "[Step] [2:] Mic icon tap"
+    },
+    {
+      "hi": "स्टेप थ्री। बोलो, फिर भेजने से पहले टेक्स्ट ठीक कर लो।",
+      "cap": "[Step] [3:] Bolo, phir [Edit]"
+    },
+    {
+      "hi": "मेरा असली इस्तेमाल? लंबा प्रॉम्प्ट।",
+      "cap": "Asli use: lamba [Prompt]"
+    },
+    {
+      "hi": "रिज़्यूमे की सारी डिटेल, या ईमेल का पूरा मामला, बस बोल दो।",
+      "cap": "Resume, email sab [Bolke] do"
+    },
+    {
+      "hi": "जितनी ज़्यादा डिटेल, उतना अच्छा जवाब।",
+      "cap": "Zyada detail, [Better] jawab"
+    },
+    {
+      "hi": "पर असली ट्रिक अब आती है।",
+      "cap": "Par asli [Trick] ab aati hai"
+    },
+    {
+      "hi": "बोलते वक़्त वेवफ़ॉर्म पर टैप करो, लिखा टेक्स्ट छुप जाएगा।",
+      "cap": "[Waveform] tap, text chhupega"
+    },
+    {
+      "hi": "स्क्रीन देखे बिना, आराम से पूरी बात बोलो।",
+      "cap": "Aaram se puri [Baat] bolo"
+    },
+    {
+      "hi": "दोबारा टैप करो, और पूरा टेक्स्ट देख लो।",
+      "cap": "Dobara tap, [Text] dekho"
+    },
+    {
+      "hi": "अब कुछ सच भी सुनो।",
+      "cap": "Ab kuch [Sach] bhi suno"
+    },
+    {
+      "hi": "एआई ग़लत सुन सकता है, भेजने से पहले पढ़ लो।",
+      "cap": "AI [Galat] sun sakta hai"
+    },
+    {
+      "hi": "तुम्हारी आवाज़ की रिकॉर्डिंग, चैट हिस्ट्री के साथ सेव रहती है।",
+      "cap": "Audio [Chat] ke saath save"
+    },
+    {
+      "hi": "चैट डिलीट करो, तो आम तौर पर तीस दिन में हट जाती है।",
+      "cap": "Chat delete, [30] din mein"
+    },
+    {
+      "hi": "इसलिए पासवर्ड या बैंक डिटेल, कभी मत बोलो।",
+      "cap": "[Password] kabhi mat bolo"
+    },
+    {
+      "hi": "माइक नहीं दिखा? रोलआउट चल रहा है, ऐप अपडेट करते रहो।",
+      "cap": "Nahi dikha? [Update] karo"
+    },
+    {
+      "hi": "तुम सबसे पहले क्या बोलकर लिखवाओगे? कमेंट में बोलो लिखो, सबको रिप्लाई करूँगा।",
+      "cap": "Comment karo [BOLO] sabko reply"
+    },
+    {
+      "hi": "ऐसे ही ट्रिक्स के लिए, जयंत के गाइड्स को फ़ॉलो करना न भूलें।",
+      "cap": "Aise tricks ke liye [Follow] karo"
+    }
+  ],
+  "sections": [
+    {
+      "lines": [
+        0,
+        2
+      ],
+      "card": "hero",
+      "params": {
+        "window": "chatgpt · dictation",
+        "title": "Live Dictation",
+        "subtitle": "Bolo, ChatGPT likhega",
+        "badge": "₹0 · NEW",
+        "stat_label": "Free plan pe kharcha",
+        "stat_from": 0,
+        "stat_to": 0,
+        "stat_style": "inr",
+        "stat_at": "l1",
+        "stat_chip": "Sab plans",
+        "checklist_title": "Kahan milega",
+        "items": [
+          "01  Phone app",
+          "02  Website",
+          "03  Desktop app"
+        ],
+        "check_at": "l2+0.2",
+        "phone": {
+          "title": "BOLO",
+          "subtitle": "LIKH GAYA",
+          "cta": "Mic tap",
+          "line": "ChatGPT"
+        }
+      }
+    },
+    {
+      "lines": [
+        3,
+        5
+      ],
+      "card": "compare",
+      "params": {
+        "left": {
+          "title": "Pehle",
+          "lines": [
+            "Bolo, phir wait",
+            "Text baad mein",
+            "10 min limit"
+          ]
+        },
+        "right": {
+          "title": "Ab",
+          "lines": [
+            "Text saath-saath",
+            "Koi wait nahi",
+            "Limit hati"
+          ]
+        },
+        "right_at": "l1",
+        "verdict": "Bolte jao, likhta jaayega"
+      }
+    },
+    {
+      "lines": [
+        6,
+        8
+      ],
+      "card": "steps",
+      "params": {
+        "window": "chatgpt · kaise",
+        "items": [
+          {
+            "title": "App update",
+            "sub": "ya website kholo",
+            "at": 0.5
+          },
+          {
+            "title": "Mic icon tap",
+            "sub": "Message box mein",
+            "at": "l1"
+          },
+          {
+            "title": "Bolo + edit",
+            "sub": "Phir bhejo",
+            "at": "l2"
+          }
+        ]
+      }
+    },
+    {
+      "lines": [
+        9,
+        11
+      ],
+      "card": "chat",
+      "params": {
+        "label": "Asli use",
+        "contact": "ChatGPT",
+        "phone": {
+          "title": "PROMPT",
+          "subtitle": "BOLKE DO",
+          "cta": "Send",
+          "line": "Free"
+        },
+        "messages": [
+          {
+            "text": "Meri resume detail suno...",
+            "mine": true,
+            "at": "l1"
+          },
+          {
+            "text": "Email ka poora mamla...",
+            "mine": true,
+            "at": "l1+2.0"
+          },
+          {
+            "text": "Detail mili, accha!",
+            "at": "l2"
+          },
+          {
+            "text": "Ye raha jawab",
+            "at": "l2+1.4"
+          }
+        ],
+        "stamp": "Bina typing ✓"
+      }
+    },
+    {
+      "lines": [
+        12,
+        15
+      ],
+      "card": "terminal",
+      "params": {
+        "label": "Asli trick · Waveform",
+        "window": "chatgpt · dictation",
+        "prompts": [
+          {
+            "text": "> Waveform tap",
+            "at": "l1"
+          },
+          {
+            "text": "> Text chhupa",
+            "at": "l1+1.6"
+          },
+          {
+            "text": "> Dobara tap",
+            "at": "l3"
+          }
+        ],
+        "results": [
+          {
+            "text": "Poora text dikha",
+            "at": "l3+1.4"
+          }
+        ],
+        "cards": [
+          {
+            "title": "Dhyan nahi bhatka",
+            "sub": "Aaram se bolo"
+          },
+          {
+            "chip": "₹0",
+            "title": "Free",
+            "sub": "Sab plans",
+            "green": true
+          }
+        ]
+      }
+    },
+    {
+      "lines": [
+        16,
+        19
+      ],
+      "card": "big_number",
+      "params": {
+        "label": "Sach bhi suno",
+        "from": 0,
+        "to": 30,
+        "style": "plain",
+        "sub": "Din mein audio delete",
+        "chips": [
+          "Galat sun sakta",
+          "Chat mein save",
+          "Pehle padho"
+        ]
+      }
+    },
+    {
+      "lines": [
+        20,
+        21
+      ],
+      "card": "crosses",
+      "params": {
+        "items": [
+          {
+            "title": "Password bolna",
+            "sub": "Kabhi nahi"
+          },
+          {
+            "title": "Bank detail",
+            "sub": "Kabhi nahi"
+          },
+          {
+            "title": "Bina padhe bhejna",
+            "sub": "Pehle check"
+          }
+        ],
+        "final": {
+          "title": "Smart use",
+          "sub": "Bolo tum, check bhi tum",
+          "bar_label": "Safe",
+          "at": "l1"
+        }
+      }
+    },
+    {
+      "lines": [
+        22,
+        23
+      ],
+      "card": "cta",
+      "params": {
+        "keyword": "BOLO",
+        "name": "Jayant Ke Guides",
+        "initials": "JK",
+        "dm_text": "Comment karo BOLO",
+        "dm_sub": "Har comment ka reply milega"
+      }
+    }
+  ],
+  "caption": "Typing ki mehnat bachao: ChatGPT voice typing ab sabke liye, free plan pe bhi.\nChatGPT Live Dictation mein tum bolte jao, text saath-saath likha jaata hai. 10 minute wali limit bhi hat gayi.\n\nKaise:\n1. ChatGPT app update karo ya website kholo\n2. Message box mein mic icon pe tap karo\n3. Bolo, phir bhejne se pehle text theek kar lo\n\nAsli use: lamba prompt bolke do. Resume ki saari detail, email ka poora mamla. Zyada detail = better jawab.\nTrick: bolte waqt waveform pe tap karo, text chhup jaayega. Dobara tap karo, poora text dikhega.\n\nSach bhi: AI galat sun sakta hai, bhejne se pehle padho. Audio chat history ke saath save rehta hai, chat delete karne par aam taur pe 30 din mein hat jaata hai. Password ya bank detail kabhi mat bolo. Rollout chal raha hai, mic na dikhe to app update karte raho.\n\nComment mein BOLO likho, sabko reply karunga.\n\n#aitools #chatgpthindi #aitoolsforfree #chatgpt #aihindi"
+}

@@ -52,5 +52,12 @@
     "topic": "Gemini Tasks (agent mode) 17 Nov 2026 se India mein free - Task toggle, inbox safai example, scheduled task; shartein 18+, personal account, max 15 ek saath, confirm before kharidari, galti, password mat likho",
     "pillar": "free_tools",
     "hook": "Tumhara kaam ab Gemini khud karega. Free mein"
+  },
+  {
+    "date": "2026-11-24",
+    "slot": "noon",
+    "topic": "ChatGPT Live Dictation (18 Nov 2026) sabhi plans mein free bhi - mic icon se bolke likho, text live, 10 min limit hati, edit before send, waveform tap se text chhupao; sach: galat sun sakta, audio chat history mein save, delete par ~30 din, password/bank detail mat bolo",
+    "pillar": "chatgpt_claude_tricks",
+    "hook": "Typing chhodo. Tum bolo, ChatGPT likhega"
   }
 ]
