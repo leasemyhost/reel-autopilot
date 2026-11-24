@@ -1,0 +1,16 @@
+Roz ke chhote kaam ab Gemini khud karega, free mein. Gemini Tasks India mein free ho gaya hai.
+Gemini app mein Chat nahi, Task chuno. Kaam batao, wo background mein karke notification dega.
+
+Kaise:
+1. Gemini app update karo ya gemini.google.com kholo
+2. Text box ke upar Task pe tap karo
+3. Kaam likho aur Submit
+
+Pehla task try karo: "Mere newsletters ka saar do aur faltu mail se unsubscribe karo"
+Trick: time do, jaise "Har Monday subah 9 baje inbox ka recap do"
+
+Shartein: 18+ umar, personal Google account (school/office account pe nahi), ek saath max 15 tasks. Kharidari, payment ya form se pehle Gemini tumse poochega. AI galti kar sakta hai, result khud check karo. Password ya card number task mein mat likho. Rollout chal raha hai, button na dikhe to app update karte raho.
+
+Comment mein TASK likho, sabko reply karunga.
+
+#aitools #geminiai #aitoolsforfree #googlegemini #aihindi

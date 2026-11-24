@@ -1,0 +1,16 @@
+{
+  "title": "Gemini Task ab free",
+  "topic": "Gemini Tasks (agent mode, pehle Spark) 17 Nov 2026 se India mein free: Task toggle, inbox safai example, scheduled task (Monday 9am recap / news digest); shartein 18+, personal account, max 15 ek saath, kharidari/form se pehle confirm, galti, password mat likho, rollout",
+  "hook": "Tumhara kaam ab Gemini khud karega. Free mein",
+  "slot": "morning",
+  "sources": [
+    "https://support.google.com/gemini/answer/17094507",
+    "https://gemini.google/release-notes/",
+    "https://gemini.google/overview/productivity/",
+    "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+  ],
+  "id": "2026-11-24-morning",
+  "duration": 92.6,
+  "built_at": "2026-11-24T00:01:46.593157Z",
+  "status": "ready"
+}
