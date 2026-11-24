@@ -2,7 +2,7 @@
   "account": {
     "id": "17841451212571971",
     "followers_count": 20,
-    "media_count": 17,
+    "media_count": 18,
     "username": "jayantkeguidess"
   },
   "reels": [
@@ -59,6 +59,15 @@
       "posted_at": "2026-11-23T07:28:03.092389Z",
       "permalink": "https://www.instagram.com/reel/DgE15Lltjru/",
       "error": "GET https://graph.facebook.com/v22.0/18119224031118915/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
+    },
+    {
+      "id": "2026-11-24-evening",
+      "title": "ChatGPT Go free khatam, ₹399 bachao",
+      "hook": "Free ChatGPT Go khatam? ₹399 katne wale",
+      "topic": "ChatGPT Go India free 1-saal offer (Nov 2025-21 Jan 2026 claim) khatam ho raha - har user ki date se 12 mahine baad ₹399/mahina auto renew; Settings>Billing mein date dekho, jahan se liya wahi cancel (web/Play Store/App Store), UPI AutoPay mandate check, 24h pehle; app delete se cancel nahi, refund mushkil; free plan chalta rahega",
+      "posted_at": "2026-11-24T14:05:04.803952Z",
+      "permalink": "https://www.instagram.com/reel/DgIIFH0B5RB/",
+      "error": "GET https://graph.facebook.com/v22.0/18110077064205370/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
     },
     {
       "id": "2026-11-24-morning",
