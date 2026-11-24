@@ -2,7 +2,7 @@
   "account": {
     "id": "17841451212571971",
     "followers_count": 19,
-    "media_count": 15,
+    "media_count": 16,
     "username": "jayantkeguidess"
   },
   "reels": [
@@ -59,6 +59,15 @@
       "posted_at": "2026-11-23T07:28:03.092389Z",
       "permalink": "https://www.instagram.com/reel/DgE15Lltjru/",
       "error": "GET https://graph.facebook.com/v22.0/18119224031118915/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
+    },
+    {
+      "id": "2026-11-24-morning",
+      "title": "Gemini Task ab free",
+      "hook": "Tumhara kaam ab Gemini khud karega. Free mein",
+      "topic": "Gemini Tasks (agent mode, pehle Spark) 17 Nov 2026 se India mein free: Task toggle, inbox safai example, scheduled task (Monday 9am recap / news digest); shartein 18+, personal account, max 15 ek saath, kharidari/form se pehle confirm, galti, password mat likho, rollout",
+      "posted_at": "2026-11-24T01:05:10.226718Z",
+      "permalink": "https://www.instagram.com/reel/DgGu34DBQfC/",
+      "error": "GET https://graph.facebook.com/v22.0/17908459974353367/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
     }
   ]
 }
