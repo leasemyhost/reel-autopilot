@@ -1,63 +1,70 @@
 [
-  {
-    "date": "2026-11-22",
-    "slot": "example",
-    "topic": "AI se website banakar local business se kamai"
-  },
-  {
-    "date": "2026-11-22",
-    "slot": "morning",
-    "topic": "5 FREE AI tools with verified free limits (Gemini, Perplexity, Claude, Bing Image Creator, TTSMaker)",
-    "pillar": "free_tools",
-    "hook": "Har mahine AI ke paise mat do. Ye 5 tools free hain"
-  },
-  {
-    "date": "2026-11-22",
-    "slot": "noon",
-    "topic": "ChatGPT audio file upload se transcript + notes (paid only) + free camera photo jugaad",
-    "pillar": "chatgpt_claude_tricks",
-    "hook": "Ghante bhar ki recording sunna band karo. ChatGPT ab audio file se notes banata hai"
-  },
-  {
-    "date": "2026-11-22",
-    "slot": "evening",
-    "topic": "Gemini Canvas (free) se local dukaan ki website + share link WhatsApp demo + Netlify free plan pe pakki site; example math 5 x Rs 3,000",
-    "pillar": "ai_kamai",
-    "hook": "Dukaan ki website, free AI se, 1 ghante mein"
-  },
-  {
-    "date": "2026-11-23",
-    "slot": "morning",
-    "topic": "Purani phati/blur photo ko Gemini app (free, 18+, roz ki limit) se restore + rang; 2-message trick; Google Photos Unblur bonus",
-    "pillar": "free_tools",
-    "hook": "Studio ke paise mat do. Purani phati photo free mein nayi"
-  },
-  {
-    "date": "2026-11-23",
-    "slot": "noon",
-    "topic": "ChatGPT/Claude free plan se ATS friendly resume - JD copy + details + exact prompt; har job naya resume; 1 column/no photo/DOCX; sach: AI galti, jhooth nahi, free limit",
-    "pillar": "chatgpt_claude_tricks",
-    "hook": "Tumhara resume 10 minute mein, free AI se"
-  },
-  {
-    "date": "2026-11-23",
-    "slot": "evening",
-    "topic": "College students (18+) ke liye Google AI Plus 1 saal free - one.google.com/ai-student, SheerID, 31 Dec 2026 deadline; card zaroori, 1 saal baad ~Rs 399/mahina auto renew - reminder + cancel; non-student ke liye free Gemini app",
-    "pillar": "free_tools",
-    "hook": "College mein ho? Rs 4000 ka AI, free"
-  },
-  {
-    "date": "2026-11-24",
-    "slot": "morning",
-    "topic": "Gemini Tasks (agent mode) 17 Nov 2026 se India mein free - Task toggle, inbox safai example, scheduled task; shartein 18+, personal account, max 15 ek saath, confirm before kharidari, galti, password mat likho",
-    "pillar": "free_tools",
-    "hook": "Tumhara kaam ab Gemini khud karega. Free mein"
-  },
-  {
-    "date": "2026-11-24",
-    "slot": "noon",
-    "topic": "ChatGPT Live Dictation (18 Nov 2026) sabhi plans mein free bhi - mic icon se bolke likho, text live, 10 min limit hati, edit before send, waveform tap se text chhupao; sach: galat sun sakta, audio chat history mein save, delete par ~30 din, password/bank detail mat bolo",
-    "pillar": "chatgpt_claude_tricks",
-    "hook": "Typing chhodo. Tum bolo, ChatGPT likhega"
-  }
+ {
+  "date": "2026-11-22",
+  "slot": "example",
+  "topic": "AI se website banakar local business se kamai"
+ },
+ {
+  "date": "2026-11-22",
+  "slot": "morning",
+  "topic": "5 FREE AI tools with verified free limits (Gemini, Perplexity, Claude, Bing Image Creator, TTSMaker)",
+  "pillar": "free_tools",
+  "hook": "Har mahine AI ke paise mat do. Ye 5 tools free hain"
+ },
+ {
+  "date": "2026-11-22",
+  "slot": "noon",
+  "topic": "ChatGPT audio file upload se transcript + notes (paid only) + free camera photo jugaad",
+  "pillar": "chatgpt_claude_tricks",
+  "hook": "Ghante bhar ki recording sunna band karo. ChatGPT ab audio file se notes banata hai"
+ },
+ {
+  "date": "2026-11-22",
+  "slot": "evening",
+  "topic": "Gemini Canvas (free) se local dukaan ki website + share link WhatsApp demo + Netlify free plan pe pakki site; example math 5 x Rs 3,000",
+  "pillar": "ai_kamai",
+  "hook": "Dukaan ki website, free AI se, 1 ghante mein"
+ },
+ {
+  "date": "2026-11-23",
+  "slot": "morning",
+  "topic": "Purani phati/blur photo ko Gemini app (free, 18+, roz ki limit) se restore + rang; 2-message trick; Google Photos Unblur bonus",
+  "pillar": "free_tools",
+  "hook": "Studio ke paise mat do. Purani phati photo free mein nayi"
+ },
+ {
+  "date": "2026-11-23",
+  "slot": "noon",
+  "topic": "ChatGPT/Claude free plan se ATS friendly resume - JD copy + details + exact prompt; har job naya resume; 1 column/no photo/DOCX; sach: AI galti, jhooth nahi, free limit",
+  "pillar": "chatgpt_claude_tricks",
+  "hook": "Tumhara resume 10 minute mein, free AI se"
+ },
+ {
+  "date": "2026-11-23",
+  "slot": "evening",
+  "topic": "College students (18+) ke liye Google AI Plus 1 saal free - one.google.com/ai-student, SheerID, 31 Dec 2026 deadline; card zaroori, 1 saal baad ~Rs 399/mahina auto renew - reminder + cancel; non-student ke liye free Gemini app",
+  "pillar": "free_tools",
+  "hook": "College mein ho? Rs 4000 ka AI, free"
+ },
+ {
+  "date": "2026-11-24",
+  "slot": "morning",
+  "topic": "Gemini Tasks (agent mode) 17 Nov 2026 se India mein free - Task toggle, inbox safai example, scheduled task; shartein 18+, personal account, max 15 ek saath, confirm before kharidari, galti, password mat likho",
+  "pillar": "free_tools",
+  "hook": "Tumhara kaam ab Gemini khud karega. Free mein"
+ },
+ {
+  "date": "2026-11-24",
+  "slot": "noon",
+  "topic": "ChatGPT Live Dictation (18 Nov 2026) sabhi plans mein free bhi - mic icon se bolke likho, text live, 10 min limit hati, edit before send, waveform tap se text chhupao; sach: galat sun sakta, audio chat history mein save, delete par ~30 din, password/bank detail mat bolo",
+  "pillar": "chatgpt_claude_tricks",
+  "hook": "Typing chhodo. Tum bolo, ChatGPT likhega"
+ },
+ {
+  "date": "2026-11-24",
+  "slot": "evening",
+  "topic": "ChatGPT Go India free saal khatam - har user ki joining date se 12 mahine baad ₹399/mahina auto renew; Settings>Billing date, jahan se liya wahi cancel (web/Play Store/iPhone), UPI AutoPay mandate, 1 din pehle; app delete se cancel nahi; free plan chalta rahega",
+  "pillar": "ai_news",
+  "hook": "Free ChatGPT Go khatam? ₹399 katne wale"
+ }
 ]
