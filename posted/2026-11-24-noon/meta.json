@@ -1,0 +1,14 @@
+{
+  "title": "ChatGPT bolke likho",
+  "topic": "ChatGPT Live Dictation (18 Nov 2026) sabhi plans mein, free bhi: bolte-bolte text live aata hai, 10 minute recording limit hati; mic icon -> bolo -> bhejne se pehle edit; waveform tap se text chhupao/dikhao; lamba prompt bolke do; sach: AI galat sun sakta, audio chat history ke saath save, chat delete par aam taur pe 30 din, password/bank detail mat bolo, rollout",
+  "hook": "Typing chhodo. Tum bolo, ChatGPT likhega",
+  "slot": "noon",
+  "sources": [
+    "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "https://help.openai.com/en/articles/12168547-voice-dictation-faq"
+  ],
+  "id": "2026-11-24-noon",
+  "duration": 83.0,
+  "built_at": "2026-11-24T03:59:47.584096Z",
+  "status": "ready"
+}
