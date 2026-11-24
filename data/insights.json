@@ -1,8 +1,8 @@
 {
   "account": {
     "id": "17841451212571971",
-    "followers_count": 19,
-    "media_count": 16,
+    "followers_count": 20,
+    "media_count": 17,
     "username": "jayantkeguidess"
   },
   "reels": [
@@ -68,6 +68,15 @@
       "posted_at": "2026-11-24T01:05:10.226718Z",
       "permalink": "https://www.instagram.com/reel/DgGu34DBQfC/",
       "error": "GET https://graph.facebook.com/v22.0/17908459974353367/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
+    },
+    {
+      "id": "2026-11-24-noon",
+      "title": "ChatGPT bolke likho",
+      "hook": "Typing chhodo. Tum bolo, ChatGPT likhega",
+      "topic": "ChatGPT Live Dictation (18 Nov 2026) sabhi plans mein, free bhi: bolte-bolte text live aata hai, 10 minute recording limit hati; mic icon -> bolo -> bhejne se pehle edit; waveform tap se text chhupao/dikhao; lamba prompt bolke do; sach: AI galat sun sakta, audio chat history ke saath save, chat delete par aam taur pe 30 din, password/bank detail mat bolo, rollout",
+      "posted_at": "2026-11-24T07:28:48.590459Z",
+      "permalink": "https://www.instagram.com/reel/DgHawCPhW6l/",
+      "error": "GET https://graph.facebook.com/v22.0/18121119812107685/insights -> 400: b'{\"error\":{\"message\":\"(#10) Application does not have permission for this action\",\"code\":10,\"type\":\"OAuthException\",\"fbtrace_id"
     }
   ]
 }
